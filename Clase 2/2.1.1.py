@@ -31,9 +31,9 @@ flag_2 = True
     
 for i in range(2):
     
-    # nombre = input("Ingrese su nombre: ")
-    # while len(nombre) <= 2 :
-    #     nombre = (input("Su nombre no puede contener menos de 2 letras. Por favor vuelva a ingresarlo: "))        
+    nombre = input("Ingrese su nombre: ")
+    while len(nombre) <= 2 :
+        nombre = (input("Su nombre no puede contener menos de 2 letras. Por favor vuelva a ingresarlo: "))        
 
     # edad = input("Ingrese su edad: ")
     # edad = int(edad)
@@ -45,11 +45,11 @@ for i in range(2):
     # while nacionalidad !="Argentino" and nacionalidad != "Ingles" and nacionalidad != "Frances" and nacionalidad != "Brasilero" and nacionalidad != "Estadounidense":
     #     nacionalidad = input("Ingrese nacionalidad: ")
 
-    # carreras_ganadas = input("Ingrese la cantidad de carreras ganadas: ")
-    # carreras_ganadas = int(carreras_ganadas)
-    # while carreras_ganadas < 0:
-    #     carreras_ganadas = input("Ingrese la cantidad de carreras ganadas: ")
-    #     carreras_ganadas = int(carreras_ganadas)
+    carreras_ganadas = input("Ingrese la cantidad de carreras ganadas: ")
+    carreras_ganadas = int(carreras_ganadas)
+    while carreras_ganadas < 0:
+        carreras_ganadas = input("Ingrese la cantidad de carreras ganadas: ")
+        carreras_ganadas = int(carreras_ganadas)
 
     numero_vehiculo = input("Ingrese el numero del vehiculo: ")
     numero_vehiculo = int(numero_vehiculo)
@@ -58,12 +58,38 @@ for i in range(2):
         numero_vehiculo = int(numero_vehiculo)
         
         
-    # lista_nombres.append(nombre)   
+    lista_nombres.append(nombre)   
     # lista_edades.append(edad)
     # lista_nacionalidades.append(nacionalidad)
-    # lista_cantidad_carreras.append(carreras_ganadas)
-    # lista_num_vehiculo.append(numero_vehiculo)
-    
+    lista_cantidad_carreras.append(carreras_ganadas)
+    lista_num_vehiculo.append(numero_vehiculo)
+
+    # *Cantidad de vehículos con número par.
+    if numero_vehiculo % 2 == 0:
+        cont_vehiculos_par = cont_vehiculos_par + 1
+    else: # *Nombre del piloto con menos victorias y el número de auto impar.
+        for i in lista_cantidad_carreras:
+            if flag_2 == True:                  # Creo que la unica forma de solucioar esto es haciendo lista aparte pq en la lista de cantidad de carreras ganadas tambien van a estar los corredores con numeros par en sus autors y vamos a estar comparando mal. 
+                flag_2 = False
+                print("Entro")
+            elif i > menos_victorias:
+                continue
+            else:
+                menos_victorias = i
+                print(menos_victorias)
+
+        indice_menos_victorias_impar = lista_cantidad_carreras.index(menos_victorias) # busca en la lista la posicion del numero que coincide con el parametro
+        nombre_menos_victorias_impar = lista_nombres[indice_menos_victorias_impar]
+        
+
+
+print("El piloto con menos victorias ue maneja un auto con numero par es", nombre_menos_victorias_impar)
+print(lista_nombres)
+print("La cantidad de vehiculos con numero par es de", cont_vehiculos_par)
+
+
+
+
 
    
 # Nacionalidad del piloto más joven.
@@ -71,7 +97,7 @@ for i in range(2):
 #     if flag == True:
 #         piloto_mas_joven = i
 #         flag = False
-#     if i > piloto_mas_joven:
+#     elif i > piloto_mas_joven:
 #         continue
 #     else:
 #         piloto_mas_joven = i
@@ -80,20 +106,6 @@ for i in range(2):
 # nacionalidad_piloto_mas_joven = lista_nacionalidades[index_piloto_mas_joven] # busco la nacionalidad que se encuentre en el mismo lugar 
 
 
-# *Cantidad de vehículos con número par.
-if numero_vehiculo % 2 == 0:
-    cont_vehiculos_par = cont_vehiculos_par + 1
-else: # *Nombre del piloto con menos victorias y el número de auto impar.
-    for i in lista_cantidad_carreras:
-        if flag_2 == True:
-            menos_vicotrias = i
-            flag_2 = False
-        if i > menos_vicotrias:
-            continue
-        else:
-            menos_vicotrias = i
-            print(menos_vicotrias)
-print("La cantidad de vehiculos con numero par es de", cont_vehiculos_par)
 
 
 # print("El piloto mas joven cuenta con" , piloto_mas_joven,  " años y es de nacionalidad", nacionalidad_piloto_mas_joven )
