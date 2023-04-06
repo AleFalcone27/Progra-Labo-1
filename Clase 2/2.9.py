@@ -1,5 +1,6 @@
 edades = [15,36,18,23,45]
 nombre = ["Juan","Ana","Sol","Mario","Sonia"]
+
 flag = True
 
 for i in edades:

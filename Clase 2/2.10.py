@@ -1,17 +1,7 @@
 # Pedir al usuario que ingrese los datos de 5 alumnos y guardarlos en sus
 # respectivas listas. Validar el ingreso de datos según su criterio.
 # Datos:
-
 # nombre, sexo (f/m), nota (validar).
-# Una vez cargados los datos:
-# Mostrar el nombre del hombre con nota más baja
-# Mostrar el promedio de notas de las mujeres
-
-# Ejemplo:
-# nombres = ["Juan","Pedro","Sol","Paco","Ana"]
-# sexo = ["m","m","f","m","f"]
-# nota = [6,8,10,8,5]
-
 
 lista_nombres = []
 lista_sexo = []
@@ -21,7 +11,6 @@ flag = True
 acumulador_nota = 0
 contador_mujeres = 0
 
-
 for i in range(3):
     
     nombre = input("Ingrese su nombre: ")
@@ -30,7 +19,7 @@ for i in range(3):
     
     sexo = input("Ingrese su sexo [F - M]: ")
     sexo = sexo.capitalize()
-    while sexo !="F" and sexo !="M":
+    while sexo !="F" and sexo != "M":
         sexo = input("ERROR Ingrese [F - M] según corresponda: ")
         sexo = sexo.capitalize()
 
@@ -45,17 +34,12 @@ for i in range(3):
     lista_sexo.append(sexo)
     lista_nota.append(nota)
 
-# B
-
+# B: Mostrar el promedio de notas de las mujeres
     if sexo == "F":
         acumulador_nota = acumulador_nota + i
         contador_mujeres = contador_mujeres + 1
 
-
-
-
-
-# A
+# A: Mostrar el nombre del hombre con nota más baja
 for i in lista_nota:
     if flag == True:  
         menor_nota = i # el primero valor de la lista es i
@@ -69,7 +53,6 @@ for i in lista_nota:
 posicion_menor_nota = lista_nota.index(menor_nota) # guardamos el indice del numero mas chico en la varaible posicion_menor_nota
 nombre_menor_nota = lista_nombres[posicion_menor_nota] # en la lista nobres accedo al indice que coincide con la edad mas chica
 
-        
 promedio_nota_mujeres = acumulador_nota / contador_mujeres
 
 

@@ -21,7 +21,7 @@
 lista_nombres = []    
 lista_edades = []
 lista_nacionalidades = []
-lista_cantidad_carreras = []
+lista_cantidad_carreras_ganadas = []
 lista_num_vehiculo = []
 
 cont_vehiculos_par = 0
@@ -29,11 +29,11 @@ cont_vehiculos_par = 0
 flag = True
 flag_2 = True
     
-for i in range(2):
+for i in range(3):
     
-    # nombre = input("Ingrese su nombre: ")
-    # while len(nombre) <= 2 :
-    #     nombre = (input("Su nombre no puede contener menos de 2 letras. Por favor vuelva a ingresarlo: "))        
+    nombre = input("Ingrese su nombre: ")
+    while len(nombre) <= 2 :
+        nombre = (input("Su nombre no puede contener menos de 2 letras. Por favor vuelva a ingresarlo: "))        
 
     # edad = input("Ingrese su edad: ")
     # edad = int(edad)
@@ -45,11 +45,11 @@ for i in range(2):
     # while nacionalidad !="Argentino" and nacionalidad != "Ingles" and nacionalidad != "Frances" and nacionalidad != "Brasilero" and nacionalidad != "Estadounidense":
     #     nacionalidad = input("Ingrese nacionalidad: ")
 
-    # carreras_ganadas = input("Ingrese la cantidad de carreras ganadas: ")
-    # carreras_ganadas = int(carreras_ganadas)
-    # while carreras_ganadas < 0:
-    #     carreras_ganadas = input("Ingrese la cantidad de carreras ganadas: ")
-    #     carreras_ganadas = int(carreras_ganadas)
+    carreras_ganadas = input("Ingrese la cantidad de carreras ganadas: ")
+    carreras_ganadas = int(carreras_ganadas)
+    while carreras_ganadas < 0:
+        carreras_ganadas = input("Ingrese la cantidad de carreras ganadas: ")
+        carreras_ganadas = int(carreras_ganadas)
 
     numero_vehiculo = input("Ingrese el numero del vehiculo: ")
     numero_vehiculo = int(numero_vehiculo)
@@ -58,13 +58,39 @@ for i in range(2):
         numero_vehiculo = int(numero_vehiculo)
         
         
-    # lista_nombres.append(nombre)   
+    lista_nombres.append(nombre)   
     # lista_edades.append(edad)
     # lista_nacionalidades.append(nacionalidad)
-    # lista_cantidad_carreras.append(carreras_ganadas)
-    # lista_num_vehiculo.append(numero_vehiculo)
+    lista_cantidad_carreras_ganadas.append(carreras_ganadas)
+    lista_num_vehiculo.append(numero_vehiculo)
     
-
+    
+    
+    # *Cantidad de vehículos con número par.
+    if numero_vehiculo % 2 == 0:
+        cont_vehiculos_par = cont_vehiculos_par + 1
+    # *Nombre del piloto con menos victorias y el número de auto impar.
+    elif numero_vehiculo % 2 == 1:
+        for i in lista_cantidad_carreras_ganadas: # Siempre va a funcionar mal pq estoy metiendo todas las acntidades de carreras ganasdas en la misma lista
+            if flag_2 == True:
+                menos_victorias = i
+                flag_2 = False
+                print("Entro")
+            if i > menos_victorias:
+                print(i)
+                continue
+            else:
+                menos_victorias = i
+                print(i)
+    
+menos_victorias_vehiculo_impar = lista_cantidad_carreras_ganadas.index(menos_victorias) # nos permite obtener el índice o posición de la primera aparición de un elemento dentro de una lista
+nombre_menos_octorias_vehiculo_impar = lista_nombres[menos_victorias_vehiculo_impar]
+    
+    
+    
+    
+    
+    
    
 # Nacionalidad del piloto más joven.
 # for i in lista_edades:
@@ -80,26 +106,18 @@ for i in range(2):
 # nacionalidad_piloto_mas_joven = lista_nacionalidades[index_piloto_mas_joven] # busco la nacionalidad que se encuentre en el mismo lugar 
 
 
-# *Cantidad de vehículos con número par.
-if numero_vehiculo % 2 == 0:
-    cont_vehiculos_par = cont_vehiculos_par + 1
-else: # *Nombre del piloto con menos victorias y el número de auto impar.
-    for i in lista_cantidad_carreras:
-        if flag_2 == True:
-            menos_vicotrias = i
-            flag_2 = False
-        if i > menos_vicotrias:
-            continue
-        else:
-            menos_vicotrias = i
-            print(menos_vicotrias)
+
+
+print("El nombre del piloto con menos vicotias que maneja un auto impar es de" , nombre_menos_octorias_vehiculo_impar)
 print("La cantidad de vehiculos con numero par es de", cont_vehiculos_par)
 
 
 # print("El piloto mas joven cuenta con" , piloto_mas_joven,  " años y es de nacionalidad", nacionalidad_piloto_mas_joven )
 
 
-# print(lista_edades)
+print(lista_cantidad_carreras_ganadas)
+print(lista_nombres)
+print(lista_num_vehiculo)
 # print(lista_nacionalidades)
 # print(nacionalidad_piloto_mas_joven)
 
