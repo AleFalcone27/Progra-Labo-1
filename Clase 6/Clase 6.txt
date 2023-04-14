@@ -1,0 +1,56 @@
+-- STRINGS -- 
+
+Es un tipo de dato
+
+--Declaracion--
+
+- Entre comillas 
+
+
+--Caracteres especiales--
+"Hola \n Mundo"
+
+--Metodos--
+Un metodo es una funcion especial, que existe para un tipo de dato en particular
+La diferencia entre metodo y funcion es que el metodo va a estar asociado a un tipo de dato en particular y se asocia a una variable mediante el (.)
+
+-funcion
+print("hola")
+
+-metodo
+variable = "Hola mundo"
+variable.strip()
+
+-variable.strip(): Elimina los espacios en blanco antes y despues de la cadena
+-variable.lower(): Convierte todas las letras en miniscula
+-variable.upper(): Convierte todo a mayusculas
+-variable.capitalize(): Pasa a mayuscula solamente la letra que inicia la cadena y el resto en miniscula
+-variable.replace(): remplaza un conjunto de caracteres por otro
+cadena = cadena.replace("que busco", "por cual lo quiero remplazar")
+cadena = "Python,Java,C"
+-cadena.split(",") Parte la cadena cada vez que encuentra el caracter que le pasamos como parametro
+-cadena.join() Devuelve la cadena unida a cada uno de los elementos de la lista que se le pasa como parametro
+-cadena.zfill() Rellena la cedena con ceros a la izquierda hasta llegar a la longitud pasada como parametro
+cadena = "314"
+print(cadena.zfill(6) # 000314
+
+-print(cadena.isalpha()) Devuelve True si todos los carecteres son alfabeticos, de lo contrario false (el espacio es falso)
+-print(cadena.isalnum()) Devuelve True si todos los caracteres son alfanumericos, de lo contrario flase (el espacio es falso)
+print(cadena.count("a")) Devuelve la cantidad de veces que aparece el caracter que pasamos como parametro
+
+
+--f-string--
+
+cadena = f"Nombre: {nombre}, Edad: {e_usuario}"
+
+
+--Longitud--
+print(len(cadena)) Devuelve como resultado la longitud de la caedna de texto que le pasamos como parametro (el espacio cuenta)
+
+
+--Slice--
+cadena = "Hola Mundo"
+cadena = cadena[desde:hasta]
+print(cadena[5:10]) #Mundo
+print(cadena[5:]) #Mundo (El segundo elemento es exclusivo)
+print(cadena[:5]) # Hola
