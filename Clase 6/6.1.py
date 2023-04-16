@@ -1,4 +1,4 @@
-from data_stark import lista_personajes as lista_heroes
+from data_stark import lista_personajes as lista_personajes
 
 heroe = { "nombre": "Howard the Duck",
     "identidad": "Howard (Last name unrevealed)",
@@ -10,7 +10,6 @@ heroe = { "nombre": "Howard the Duck",
     "color_pelo": "Yellow",
     "fuerza": "2",
     "inteligencia": ""}
-
 
 
 # 1.1
@@ -38,7 +37,7 @@ def extraer_iniciales(nombre_heroe:str):
         iniciales = iniciales + lista_nombre_heroe[i][0] + "." 
         
     return iniciales
-iniciales = extraer_iniciales("Howard the Duck")
+
 
 # 1.2
 def definir_iniciales_nombre(heroe:dict):
@@ -52,31 +51,25 @@ def definir_iniciales_nombre(heroe:dict):
         return True
 
 # 1.3
-def agregar_iniciales_nombre(lista_heroes):
+def agregar_iniciales_nombre(lista_personajes):
     # validamos que el argumento pasado sea del tipo list y que tenga al menos un elemento
-    if type(lista_heroes) == list or len(lista_heroes) > 0: 
+    if type(lista_personajes) == list or len(lista_personajes) > 0: 
         
-        for i in lista_heroes:
+        for i in lista_personajes:
             # verificamos que la funcion definir_inciales_nombre() se haya ejecutado correctamente en base al valor de retorno
-            validacion = definir_iniciales_nombre(heroe)
+            validacion = definir_iniciales_nombre(i)
             if validacion == False:
                 resultado = "El ordigen de los datos no coentiene el formato correcto"
             else:
                 resultado = True
-            
             return resultado
-resultado = agregar_iniciales_nombre(lista_heroes)
-
-print(resultado)
-
 # 1.4 
-
-    
-
-    
-
-
-
+def stark_imprimir_nombres_con_iniciales(lista_personajes:list):
+    resultado = agregar_iniciales_nombre(lista_personajes)
+    for i in lista_personajes:
+        nombre = i["nombre"]
+        i["iniciales"] = iniciales 
+        print("*", nombre, "(" + iniciales + ")")
 
 
 

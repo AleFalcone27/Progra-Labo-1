@@ -1,6 +1,5 @@
 from data_stark import lista_personajes as lista
 
-
 # A. Recorrer la lista imprimiendo por consola el nombre de cada superhéroe de género M
 # B. Recorrer la lista imprimiendo por consola el nombre de cada superhéroe de género F
 def sorteador_generos(genero:str):
@@ -57,31 +56,55 @@ promedio_alturas = promedio_altura("M")
 print("El promedio de alturas del genero M es", promedio_alturas)
 
 
-## Revisar esto
-dict_ojos = {}     
-def cantidad_atributo_x(dict:dict, atributo_buscado:str):
-    for i in dict:
-        atributo = i[atributo_buscado]
-        if atributo not in dict: # Brown es una clave del diccionario ojos?
-            dict[atributo] = 0 # Si no esta el color le ponemos 0 # Le estamos cambiando el valor a la clave "Marron"o "Azul"
+def cantidad_atributo_x(list:list, atributo_buscado:str):
+    
+    dict = {}
+    for i in lista:
+        atributo = i[atributo_buscado] # Azul
+        if atributo not in dict: # Azul es una clave del diccionario ojos?
+            dict[atributo] = 0 # Si no esta el color le ponemos 0 # Le estamos cambiando el valor a la clave "Marron"o "Azul"  # Azul
         dict[atributo] = dict[atributo] + 1 # Le sumamos 1 #chekear como funciona esto llave valor
 
     for atributo, cantidad in dict.items(): # al poner una coma accedemos a la clave , valor # dict.items{} Returns a list containing a tuple for each key value pair
-        print("hola")
         print(atributo , cantidad)
         
-cantidad_atributo_x(dict_ojos, "color_ojos")
+# J. Determinar cuántos superhéroes tienen cada tipo de color de ojos.
+# print(cantidad_atributo_x(lista, "color_pelo"))
 
+# K. Determinar cuántos superhéroes tienen cada tipo de color de pelo.
+cantidad_atributo_x(lista, "color_ojos")
 
-# def cantidad_color_ojos():
-#     ojos = {}
-#     for i in lista:
-#         color_ojos = i["color_ojos"]
-#         if color_ojos not in ojos: # Brown es una clave del diccionario ojos?
-#             ojos[color_ojos] = 0 # Si no esta el color le ponemos 0
-#         ojos[color_ojos] = + 1 # Le sumamos 1
-
-#     for color_ojos, cantidad in ojos.items(): # al poner una coma accedemos a la clave , valor # dict.items{} Returns a list containing a tuple for each key value pair
-#         print(color_ojos , cantidad)
+# L. Determinar cuántos superhéroes tienen cada tipo de inteligencia (En caso de no tener, Inicializarlo con ‘No Tiene’).
+def cantidad_tipo_inteligencia():
+    dict = {}
+    for i in lista:
+        atributo = i["inteligencia"] # Azul
         
-# cantidad_color_ojos()
+        if atributo == "":
+            atributo = "No tiene"
+        
+        if atributo not in dict: # Brown es una clave del diccionario ojos?
+            dict[atributo] = 0 # Si no esta el color le ponemos 0 # Le estamos cambiando el valor a la clave "Marron"o "Azul"  # Azul
+        dict[atributo] = dict[atributo] + 1 # Le sumamos 1 #chekear como funciona esto llave valor
+
+    for atributo, cantidad in dict.items(): # al poner una coma accedemos a la clave , valor # dict.items{} Returns a list containing a tuple for each key value pair
+        print(atributo , cantidad)
+        
+        
+# cantidad_tipo_inteligencia()
+
+# # M. Listar todos los superhéroes agrupados por color de ojos.
+def listar_color_de_ojos():
+    brown = []
+    green = []
+    for i in lista:
+        if i["color_ojos"] == "Brown":
+            brown.append(i["nombre"])
+        if i["color_ojos"] == "Green":
+            green.append(i["nombre"])
+            ## Seguir hasta terminar todos los colores
+    print(brown)
+    print(green)
+
+listar_color_de_ojos()
+        
