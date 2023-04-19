@@ -1,0 +1,51 @@
+-- EXPREISONES REGULARES --
+
+- ¿Que es una expresion regular?
+Serie de simbolos que nos permitiran definir patrones de busqieda en cadenas de texto 
+
+- Modulo re
+python tiene un paquete llamado re
+	imoport re
+
+- Expresiones
+NATY PELUSO || BZRP SESSION#34
+([a-aA-Z]+\|\|(a-zA-Z)+)#([0-9]+)
+
++ = UNO O MAS CARACTERES QUE CUMPLAN CON ESASA CARACTERISTICAS
+
+2023/07/ 10:12:22
+([0-9]{4})/([0-9]{2)})/([0-2]{2})
+
+-- REGEX ---
+[] conjunto de caracteres "[a-z]"
+\ permite determinar secuencias especiales "\d"
+. hace referencia a caualquier caracter "ho.a"
+^ Empieza con  "^hola"
+% Termina con  "mundo$"
+
+
+* Ninguna o mas ocurrencias  "ho.*a"
++ Una o mas ocurrencias  "ho.+a"
+? Cero o una ocurrencia "ho.?a"
+{} Especifica el numero de ocurrencias "hola.{1}a"
+| Una o la otra  "hola|chau" (es un or)
+() Permite seleccionar un grupo 
+
+- split()
+
+re.split("",objeto)
+
+- search()
+
+re.search(" ",objeto)
+Si encuentra por lo menos una ocurrencia devuelve el patron y sino devuelve None
+
+- findall()
+retorna una lista que contiene toas las coincidencias de patron
+print(re.findall("[0-9]", texto)) = deuvelve todo lo que no sea un numero
+
+- sub()
+remplaza una o mas coincidencias 
+
+result = re.sub("que queremos buscar", "porque los queremos remplazar ", objeto)
+

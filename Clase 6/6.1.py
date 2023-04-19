@@ -11,7 +11,6 @@ heroe = { "nombre": "Howard the Duck",
     "fuerza": "2",
     "inteligencia": ""}
 
-
 # 1.1
 def extraer_iniciales(nombre_heroe:str):
     
