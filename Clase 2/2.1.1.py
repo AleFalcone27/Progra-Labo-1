@@ -21,7 +21,7 @@
 lista_nombres = []    
 lista_edades = []
 lista_nacionalidades = []
-lista_cantidad_carreras = []
+lista_cantidad_carreras_ganadas = []
 lista_num_vehiculo = []
 
 cont_vehiculos_par = 0
@@ -29,7 +29,7 @@ cont_vehiculos_par = 0
 flag = True
 flag_2 = True
     
-for i in range(2):
+for i in range(3):
     
     nombre = input("Ingrese su nombre: ")
     while len(nombre) <= 2 :
@@ -61,6 +61,7 @@ for i in range(2):
     lista_nombres.append(nombre)   
     # lista_edades.append(edad)
     # lista_nacionalidades.append(nacionalidad)
+<<<<<<< HEAD
     lista_cantidad_carreras.append(carreras_ganadas)
     lista_num_vehiculo.append(numero_vehiculo)
 
@@ -91,6 +92,38 @@ print("La cantidad de vehiculos con numero par es de", cont_vehiculos_par)
 
 
 
+=======
+    lista_cantidad_carreras_ganadas.append(carreras_ganadas)
+    lista_num_vehiculo.append(numero_vehiculo)
+    
+    
+    
+    # *Cantidad de vehículos con número par.
+    if numero_vehiculo % 2 == 0:
+        cont_vehiculos_par = cont_vehiculos_par + 1
+    # *Nombre del piloto con menos victorias y el número de auto impar.
+    elif numero_vehiculo % 2 == 1:
+        for i in lista_cantidad_carreras_ganadas: # Siempre va a funcionar mal pq estoy metiendo todas las acntidades de carreras ganasdas en la misma lista
+            if flag_2 == True:
+                menos_victorias = i
+                flag_2 = False
+                print("Entro")
+            if i > menos_victorias:
+                print(i)
+                continue
+            else:
+                menos_victorias = i
+                print(i)
+    
+menos_victorias_vehiculo_impar = lista_cantidad_carreras_ganadas.index(menos_victorias) # nos permite obtener el índice o posición de la primera aparición de un elemento dentro de una lista
+nombre_menos_octorias_vehiculo_impar = lista_nombres[menos_victorias_vehiculo_impar]
+    
+    
+    
+    
+    
+    
+>>>>>>> 27019468988229c304478787e0094dfdac8191ce
    
 # Nacionalidad del piloto más joven.
 # for i in lista_edades:
@@ -106,12 +139,21 @@ print("La cantidad de vehiculos con numero par es de", cont_vehiculos_par)
 # nacionalidad_piloto_mas_joven = lista_nacionalidades[index_piloto_mas_joven] # busco la nacionalidad que se encuentre en el mismo lugar 
 
 
+<<<<<<< HEAD
+=======
+
+
+print("El nombre del piloto con menos vicotias que maneja un auto impar es de" , nombre_menos_octorias_vehiculo_impar)
+print("La cantidad de vehiculos con numero par es de", cont_vehiculos_par)
+>>>>>>> 27019468988229c304478787e0094dfdac8191ce
 
 
 # print("El piloto mas joven cuenta con" , piloto_mas_joven,  " años y es de nacionalidad", nacionalidad_piloto_mas_joven )
 
 
-# print(lista_edades)
+print(lista_cantidad_carreras_ganadas)
+print(lista_nombres)
+print(lista_num_vehiculo)
 # print(lista_nacionalidades)
 # print(nacionalidad_piloto_mas_joven)
 

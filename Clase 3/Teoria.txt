@@ -1,0 +1,57 @@
+--DICCIONARIOS--
+dict = {key : value, "key" : value}
+print = dict["key"] Para buscar una key se usan corchetes
+
+Los datos en vez de tener posiciones tienen keys
+Las claves deben ser unicas 
+
+dic_test = {"a":22, "b":"Hola", "c":3}
+
+print(dic test[‘a']) # 22
+
+print (dic_test) # {'a': 22, 'b': 'Hola’, ‘c':
+
+Lista de diccionarios
+
+
+--FUNCIONES--
+def Funcion():
+Vamos a desarrollarlas para reutilizar codigo 
+Nombre: Relacionado a lo que hace
+Parametros: Puede o no recibirlos y son los valores qe vamos a utilizar en la funcion
+Valor de retorno: Valor que la funcion obtubo despues de ejecutar todas sus instrucciones
+
+Siempre que vayamos a desarrollar una funcion me tengo que hacer estas 3 preguntas:
+-Que hace la funcion
+-Que me va a devolver
+-La funcion va a recibir o no parametros para hacer lo que tiene que hacer
+
+Nos ayudan a dividir o descomponer un problema en partes mas pequeñas 
+Siempre es mas facil resolver pequeños problemas 
+
+return = Lo podemos usar para devolver el resultado
+Para tomar algun parametro por defecto lo hardcodeamos cuando creamos la funcion 
+Si no tiene valor por defecto es obligatorio y si tiene un valor por defecto es opcional
+
+- Agumentos por posicion:
+Los argumentos deben seguir el mismo orden en la llamada y en la definicion
+
+- Argumentos por nombre:
+Otra forma de llamar a una funcion, es usando el nombre del argumento
+Llama primero el segundo argumento y el primero cambiando el orden 
+print(resta(variable_b = 5, variable_a = 15))
+
+- Parametros con tipo:
+def resta(variable_a:int, variable_b:int)
+
+retorno con tipo:
+-> 
+La flecha se usa para documentar el valor de retrno de la funcion
+
+
+
+
+
+
+ 
+
