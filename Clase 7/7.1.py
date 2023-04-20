@@ -41,12 +41,12 @@ def definir_iniciales_nombre(heroe:dict):
 
 
     if type(heroe) != dict or "nombre" not in heroe:
-
         return False
     
     else:
+        inciales = extraer_iniciales(heroe['nombre'])
         if "iniciales" not in heroe:
-            heroe["iniciales"] = extraer_iniciales(heroe['nombre'])
+            heroe["iniciales"] = inciales
 
             return True
         
@@ -72,16 +72,15 @@ def agregar_iniciales_nombre(lista:list):
         return False
 
 #1.4
-def stark_imprimir_nombres_con_iniciales(lista_heroes): 
+def stark_imprimir_nombres_con_iniciales(lista:list): 
 
-    agregar_iniciales_nombre(lista_heroes)
-    print(i['nombre'])
+# imprime los nombres de todos los heroes con sus respectivas iniciales 
 
+    if type(lista) == list and len(lista) > 1:
+        agregar_iniciales_nombre(lista_heroes)
+        for i in lista:
+            print( "*" + i['nombre'], "(" + i["iniciales"] + ")")
 
-
-
-
-
-agregar_iniciales_nombre(lista_heroes) 
+stark_imprimir_nombres_con_iniciales(lista_heroes)
 
                 
