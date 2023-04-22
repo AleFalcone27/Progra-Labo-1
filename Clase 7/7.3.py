@@ -12,7 +12,6 @@ h = { "nombre": "Howard the Duck",
     "fuerza": "2",
     "inteligencia": ""}
 
-num_str = ""
 # 3.1
 def sanitizar_entero(num_str:str):
     
@@ -59,44 +58,40 @@ def sanitizar_string(num_str:str, valor_por_defecto="-"):
     
 # 3.4
 def sanitizar_dato(heroe:dict,clave:str,tipo_dato:str):
+
 # heroe: diccionario con los datos de un personaje
 # clave: clave del valor que queremos sanitizar en el diccionario
 # tipo_dato: str que representa el tipo de dato a sanitizar
-    
-    if type(tipo_dato) == str:
-        sanitizar_string(clave)
-        
-    elif type(tipo_dato) == int:
-        sanitizar_entero(clave)
-        
-    # elif type(tipo_dato) == float:
-    #     sanitizar_flotante(clave)
-        
-    else:
-        print("Tipo de dato no reconocido")
-        return False
-    if clave not in heroe:
-            print("La clave especificada no existe en el heroe")
-            return False
-    else:
-        return True
 
+    if tipo_dato == 'str':
+        dato_sanitizado = sanitizar_string(clave)
+        retorno = dato_sanitizado
 
-def stark_normalizar_datos(lista_personajes):
+    elif tipo_dato == 'float':
+        dato_sanitizado = sanitizar_flotante(clave)
+        retorno = dato_sanitizado
+        
+    elif tipo_dato == 'int':
+        dato_sanitizado = sanitizar_entero(clave) 
+        retorno = dato_sanitizado
+
+    elif tipo_dato != 'str' or tipo_dato != 'float' or tipo_dato != 'str':
+        print('Tipo de dato no reconocido')
+
+    elif clave not in heroe:
+         print("La clave especificada no existe en el heroe")
+
+    return retorno
+
+def stark_normalizar_datos(lista_personajes:list[dict]):
     
     for heroe in lista_personajes:
-       fuerza_sanitizada = sanitizar_dato(heroe,["fuerza"],int)
-        for heroe in lista_personajes:
-            heroe["fuerza"]
+        heroe['altura'] = sanitizar_dato(heroe,heroe["altura"],'float')
+        heroe['peso'] = sanitizar_dato(heroe,heroe["peso"],'float')
+        heroe['color_ojos'] = sanitizar_dato(heroe,heroe["color_ojos"],'str')
+        heroe['color_pelo'] = sanitizar_dato(heroe,heroe["color_pelo"],'str')
+        heroe['fuerza'] = sanitizar_dato(heroe,heroe["fuerza"],'str')
+        heroe['inteligencia'] = sanitizar_dato(heroe,heroe["inteligencia"],'str')
         print(heroe)
         
-        
-        
-    print(type(heroe["fuerza"]))
-
-
-
-# print(sanitizar_flotante(num_str))
-# print(sanitizar_entero(num_str))
-# print(sanitizar_string(num_str))
 stark_normalizar_datos(lista_personajes)
