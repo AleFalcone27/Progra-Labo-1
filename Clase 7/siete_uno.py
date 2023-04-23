@@ -60,7 +60,6 @@ def agregar_iniciales_nombre(lista:list):
         for heroe in lista:  
 
             validacion = definir_iniciales_nombre(heroe) 
-            print(heroe)
             if validacion == False:
 
                 print('El origen de los dato con contiene el formato correcto')

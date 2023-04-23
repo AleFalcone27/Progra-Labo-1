@@ -3,10 +3,11 @@ from siete_uno import *
 from siete_dos import *
 from siete_tres import *
 from siete_cuatro import *
-from siete_cinco import *
-import re
 
 if __name__ == "__main__":
+    
+    # generamos este if para que solo se ejecuten las funciones que tenemos en este archivo
+    
     # 5.1
     def convertir_cm_a_mtrs(valor_cm):
         
@@ -89,35 +90,64 @@ if __name__ == "__main__":
 
     # 5.5
     def stark_navegar_fichas(lista_heroes:list):
-        numero_heroe = 1
+        numero_heroe = 0
         
         continuar = True
         while continuar:
             
+            if numero_heroe == 24:
+                numero_heroe = 1
+            
             imprimir_ficha_heroe(lista_heroes[numero_heroe])
             
             opcion = input(
-                " [1] Ir a la izquierda \n [2] Ir a la derecha \n [S] Salir \n ------- \n Elija una opcion: "
+                " [1] Ir a la izquierda \n [2] Ir a la derecha \n [S] Volver al menu principa \n ------- \n Elija una opcion: "
                     )
             
             if opcion == "1":
                 numero_heroe = numero_heroe - 1
                 
             elif opcion == "2":
-                numero_heroe = numero_heroe +1
-            
-            elif opcion > 24:
-                opcion == 0
+                numero_heroe = numero_heroe + 1
             
             elif opcion == "s" or opcion == "S":
-                break
-                
-                
-
+                stark_marvel_app_3()
             
-stark_navegar_fichas(lista_heroes)
+    # 6.1
+    def imprimir_menu():
+        print(" ---------------------------------------------- \n --MENU PRINCIPAL-- \n 1- Imprimir la lista de nombres junto con sus iniciales \n 2- Generar codigos de heroés \n 3- Normalizar datos \n 4- Imprimir indice de nombres \n 5- Navegar fichas \n S- Salir \n ---------------------------------------------- ")
+        
+    
+    # 6.2
+    def stark_menu_principal():
+        imprimir_menu()
+        opcion_elegida = input("Ingrese una opcion: ")
+        return opcion_elegida
+        
+
+    # 6.3 
+    def stark_marvel_app_3():    
+        opcion_elegida = ""  
+        while opcion_elegida != "1" or opcion_elegida != "2" or opcion_elegida != "3" or opcion_elegida != "4" or opcion_elegida != "5" or opcion_elegida != "6":
+            opcion_elegida = stark_menu_principal()
+            match opcion_elegida:
+                case "1":
+                    stark_imprimir_nombres_con_iniciales(lista_heroes)
+                case "2":
+                    stark_generar_codigos_heroes(lista_heroes)
+                case "3":
+                    stark_normalizar_datos(lista_heroes)
+                case "4":
+                    stark_imprimir_indice_nombre(lista_heroes)
+                case "5":
+                    stark_navegar_fichas(lista_heroes)
+                case "S":
+                    print(" ---- \n GRACIAS POR UTILIZAR NUESTRA APP!! \n ----") 
+                    break
+        
+stark_marvel_app_3()
 
 
-    # print(convertir_cm_a_mtrs(79.349999999999994))
-    # string = (generara_separador("***",43,True))
-    # generar_encabezado("pagina principal")
+
+    
+    
