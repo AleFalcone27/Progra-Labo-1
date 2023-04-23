@@ -1,17 +1,6 @@
 import re 
 from data_stark import lista_personajes as lista_heroes 
 
-h = { "nombre": "Howard the Duck",
-    "identidad": "Howard (Last name unrevealed)",
-    "empresa": "Marvel Comics",
-    "altura": "79.349999999999994",
-    "peso": "18.449999999999999",
-    "genero": "M",
-    "color_ojos": "Brown",
-    "color_pelo": "Yellow",
-    "fuerza": "2",
-    "inteligencia": ""}
-
 #2.1
 def generar_codigo_heroe(id_heroe:int, genero_heroe:str):
     if type(id_heroe) == int and genero_heroe != "" and genero_heroe == "M" or genero_heroe == "F" or genero_heroe == "NB":
@@ -82,6 +71,6 @@ def stark_generar_codigos_heroes(lista:list):
         print("* El codigo del ultimo héroe es:" , ultima_asignacion)
     
 
-stark_generar_codigos_heroes(lista_heroes)
+
 
 

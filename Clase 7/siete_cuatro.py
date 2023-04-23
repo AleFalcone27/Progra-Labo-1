@@ -29,7 +29,7 @@ def stark_imprimir_indice_nombre(lista:list[dict]):
     lista_nombres = "-".join(lista_nombres)
     print(lista_nombres)
 
-stark_imprimir_indice_nombre(lista_personajes)
+
 
 
 

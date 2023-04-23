@@ -81,6 +81,6 @@ def stark_imprimir_nombres_con_iniciales(lista:list):
         for i in lista:
             print( "*" + i['nombre'], "(" + i["iniciales"] + ")")
 
-stark_imprimir_nombres_con_iniciales(lista_heroes)
+
 
                 

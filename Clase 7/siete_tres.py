@@ -1,22 +1,12 @@
 from data_stark import lista_personajes
 import re
 
-h = { "nombre": "Howard the Duck",
-    "identidad": "Howard (Last name unrevealed)",
-    "empresa": "Marvel Comics",
-    "altura": "79.349999999999994",
-    "peso": "18.449999999999999",
-    "genero": "M",
-    "color_ojos": "Brown",
-    "color_pelo": "Yellow",
-    "fuerza": "2",
-    "inteligencia": ""}
-
 # 3.1
 def sanitizar_entero(num_str:str):
     
 # esta funcion determina si el str recibido como parametro es un numero entero positivo y lo retorna  
-       
+
+    num_str = str(num_str)
     num_str = num_str.strip()
     
     if re.search("[a-zA-Z]+",num_str):
@@ -33,7 +23,7 @@ def sanitizar_entero(num_str:str):
 def sanitizar_flotante(num_str:str):
     
 # esta funcion determina si el str recibido como parametro es un flotante positivo
-  
+    num_str = str(num_str)
     num_str = num_str.strip()
     
     if re.search("[a-zA-Z]+", num_str):
@@ -107,4 +97,4 @@ def stark_normalizar_datos(lista_personajes:list[dict]):
         else:
             print("Error: Lista de héroes vacía")
         
-stark_normalizar_datos(lista_personajes)
+
