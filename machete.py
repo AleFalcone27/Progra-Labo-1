@@ -16,7 +16,7 @@ def informar_nombre_y_altura(lista:list[dict],llave1, llave2):
         print(i[llave1], i[llave2])
             
 
-def calcular_promedio(lista:list[dict], llave)->float:
+def calcular_promedio(lista:list[dict], llave)-> float:
 # esta funcion itera sobre una lista de diccionarios acumulando el valor asignado a la key pasada como parametro y sacando el promedio
     acum = 0
     cont = 0
@@ -30,6 +30,21 @@ def calcular_promedio(lista:list[dict], llave)->float:
     
     return promedio
     
+def calcular_promedio_genero(lista:list[dict],llave:str,genero:str)-> float:
+    acum = 0
+    cont = 0
+    for i in lista:
+        if i["genero"] == genero:
+            acum = acum + float(i[llave]) # normalizar los datos o castear en la funcion
+            cont = cont + 1
+        
+    promedio = acum / cont
+    
+    promedio = round(promedio,2) # funcion round(numero, cantidad de decimales) 
+    
+    return promedio
+
+
 def calcular_maximo(lista,llave,nombre): #QUE DEVUELVE?
 # esta funcion itera sobre una lista de diccionarios y calcula el valor mas grande que existe asignado a la clave pasada como parametro 
     nombre_max = None
@@ -52,6 +67,40 @@ def calcular_minimo(lista:list[dict],llave): #QUE DEVUELVE?
                 nombre_mini = i[mini]
                 
     return mini , nombre_mini             
+
+
+def calcular_min_genero(lista:list,llave:str,genero:str):
+    # esta funcion itera sobre una lista de diccionarios y calcula el valor mas pequeño que existe dentro del genero especificado, asignado a la clave pasada como parametro 
+    nombre_mini = None
+    mini = None
+    for i in lista:
+        if genero == i["genero"]:
+            if mini == None or (i[llave]) < mini: #recordar castear en caso de ser necesario
+                mini = (i[llave]) #recordar castear en caso de ser necesario
+                nombre_mini = i["nombre"]
+                
+    return nombre_mini  # devuelvo solo el nombre
+
+
+def calcular_max_genero(lista:list,llave:str,genero:str):
+# esta funcion itera sobre una lista de diccionarios y calcula el valor mas grande que existe dentro del genero pasado como parametro, asignado a la clave tambien pasada como parametro 
+    nombre_max = None
+    max = None
+    for i in lista:
+        if genero == i["genero"]:
+            if max == None or float(i[llave]) > max: #recordar castear en caso de ser necesario
+                max = float(i[llave]) 
+                nombre_max = i["nombre"]
+            
+    return nombre_max # solo retorno el nombre
+calcular_max_genero(lista_heroes,"altura","F")
+
+
+
+
+
+
+
 
         
 --------------------------------------------------------------------------------

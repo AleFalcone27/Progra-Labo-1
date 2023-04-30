@@ -27,7 +27,6 @@ def es_genero(dict:dict,genero:str)->bool:
     else: 
         return False
     
-    
 # 2.1
 def stark_guardar_genero_heroe(lista:list[dict],genero)->bool:
     
@@ -52,7 +51,5 @@ def stark_guardar_genero_heroe(lista:list[dict],genero)->bool:
         #     retorno = True
         # else:
         #     retorno = False
-            
-
             
 stark_guardar_genero_heroe(lista_heroes,"m")

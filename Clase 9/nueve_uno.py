@@ -54,45 +54,6 @@ def stark_menu_desafio_5():
     else:
         return -1
         
-# 1.3
-# def stark_marvel_app_5():
-    # opcion_elegida = stark_menu_desafio_5()
-    # match opcion_elegida:
-    #     case "A":
-    #         sorteador_generos_nombre("M")
-    #     case "B":
-    #         sorteador_generos_nombre("F")
-    #     case "C":
-    #         mas_alto, nombre_mas_alto, menos_alto , nombre_menos_alto = informar_mas_y_menos_alto(lista,"M")
-    #         print("El superhéroe ma alto mide", mas_alto)
-    #     case "D":
-    #         mas_alto, nombre_mas_alto, menos_alto , nombre_menos_alto = informar_mas_y_menos_alto(lista,"F")
-    #         print("La superhéroe mas alta mide", mas_alto)
-    #     case "E":
-    #         mas_alto, nombre_mas_alto, menos_alto , nombre_menos_alto = informar_mas_y_menos_alto(lista_personajes,"M")
-    #         print("El superhéroe menos alto mide", menos_alto)
-    #     case "F":
-    #         mas_alto, nombre_mas_alto, menos_alto , nombre_menos_alto = informar_mas_y_menos_alto(lista_personajes,"F")
-    #         print("La superhéroe menos alta mide", menos_alto)
-    #     case "G":
-    #         print(promedio_altura("M"))
-    #     case "H":
-    #         print(promedio_altura("F"))
-    #     case "I":
-    #         mas_alto, nombre_mas_alto, menos_alto , nombre_menos_alto = informar_mas_y_menos_alto(lista,"M")
-    #         print("El superheroe mas alto es", nombre_mas_alto)
-    #         mas_alto, nombre_mas_alto, menos_alto , nombre_menos_alto = informar_mas_y_menos_alto(lista,"F")
-    #         print("La superheroe mas alta es", nombre_mas_alto )
-    #         mas_alto, nombre_mas_alto, menos_alto , nombre_menos_alto = informar_mas_y_menos_alto(lista_personajes,"M")
-    #         print("El superheroe menos alto es", nombre_menos_alto)
-    #         mas_alto, nombre_mas_alto, menos_alto , nombre_menos_alto = informar_mas_y_menos_alto(lista_personajes,"F")
-    #         print("La superheroe menos alta es", nombre_menos_alto)
-    #     case "J":
-    #         cantidad_atributo_x(lista, "color_ojos") ## ASIGNAR EL NO TIENE
-    #     case "K":
-    #         cantidad_atributo_x(lista, "color_pelo") ## ASIGNAR EL NO TIENE
-    #     case "L":
-    #         cantidad_tipo_inteligencia() ## ASIGNAR EL NO TIENE
 
 # 1.4
 def leer_archivo(nombre_archivo:str)->list[dict]:

@@ -15,9 +15,9 @@ def sorteador_generos_nombre(genero:str):
     for i in lista:
         if i["genero"] == genero:
             print(i["nombre"])
-
-sorteador_generos_nombre("M")
-sorteador_generos_nombre("F")
+if __name__ == "__main__":
+    sorteador_generos_nombre("M")
+    sorteador_generos_nombre("F")
 
 # C. Recorrer la lista y determinar cuál es el superhéroe más alto de género M
 def informar_mas_y_menos_alto(lista:list[dict],genero:str):
@@ -68,11 +68,12 @@ def promedio_altura(genero:str):
             
     return promedio_altura
 
-promedio_alturas = promedio_altura("F") 
-print("El promedio de alturas del genero F es", promedio_alturas)
+if __name__ == "__main__":
+    promedio_alturas = promedio_altura("F") 
+    print("El promedio de alturas del genero F es", promedio_alturas)
 
-promedio_alturas = promedio_altura("M") 
-print("El promedio de alturas del genero M es", promedio_alturas)
+    promedio_alturas = promedio_altura("M") 
+    print("El promedio de alturas del genero M es", promedio_alturas)
 
 
 def cantidad_atributo_x(list:list, atributo_buscado:str):
@@ -84,14 +85,16 @@ def cantidad_atributo_x(list:list, atributo_buscado:str):
             dict[atributo] = 0 # Si no esta el color le ponemos 0 # Le estamos cambiando el valor a la clave "Marron"o "Azul"  # Azul
         dict[atributo] = dict[atributo] + 1 # Le sumamos 1 #chekear como funciona esto llave valor
 
-    for atributo, cantidad in dict.items(): # al poner una coma accedemos a la clave , valor # dict.items{} Returns a list containing a tuple for each key value pair
-        print(atributo , cantidad)
+    # for atributo, cantidad in dict.items(): # al poner una coma accedemos a la clave , valor # dict.items{} Returns a list containing a tuple for each key value pair
+    #     par = atributo , cantidad
+    return dict
         
 # J. Determinar cuántos superhéroes tienen cada tipo de color de ojos.
 # print(cantidad_atributo_x(lista, "color_pelo"))
 
 # K. Determinar cuántos superhéroes tienen cada tipo de color de pelo.
-cantidad_atributo_x(lista, "color_ojos")
+if __name__ == "__main__":
+    cantidad_atributo_x(lista, "color_ojos")
 
 # L. Determinar cuántos superhéroes tienen cada tipo de inteligencia (En caso de no tener, Inicializarlo con ‘No Tiene’).
 def cantidad_tipo_inteligencia():
@@ -107,7 +110,8 @@ def cantidad_tipo_inteligencia():
         dict[atributo] = + 1 # Le sumamos 1 #chekear como funciona esto llave valor
 
     for atributo, cantidad in dict.items(): # al poner una coma accedemos a la clave , valor # dict.items{} Returns a list containing a tuple for each key value pair
-        print(atributo , cantidad)
+        if __name__ == "__main__":
+            print(atributo , cantidad)
         
         
 # cantidad_tipo_inteligencia()
@@ -121,9 +125,10 @@ def listar_color_de_ojos():
             brown.append(i["nombre"])
         if i["color_ojos"] == "Green":
             green.append(i["nombre"])
-            ## Seguir hasta terminar todos los colores
+            ## Seguir hasta terminar todos los colores  
     print(brown)
     print(green)
 
-listar_color_de_ojos()
+if __name__ == "__main__":
+    listar_color_de_ojos()
         
