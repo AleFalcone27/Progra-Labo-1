@@ -23,16 +23,16 @@ def calcular_cantidad_tipo(lista:list,llave:str):
 calcular_cantidad_tipo(lista_heroes,"color_pelo")
 
 # 5.2
-# def guardar_cantidad_heroes_tipo(diccionario:dict,dato:str):
+def guardar_cantidad_heroes_tipo(diccionario:dict,dato:str):
     
-#     for clave in diccionario:
-#         print( dato + clave)
+    for clave in diccionario:
+        print( dato + clave)
         
         
         
         
         
-# guardar_cantidad_heroes_tipo(calcular_cantidad_tipo(lista_heroes,"color_ojos"),"color_ojos")
+guardar_cantidad_heroes_tipo(calcular_cantidad_tipo(lista_heroes,"color_ojos"),"color_ojos")
 
 
 

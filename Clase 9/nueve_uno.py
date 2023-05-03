@@ -74,15 +74,17 @@ def guardar_archivo(nombre_archivo:str, contenido:str)->bool:
     
 # Recibe como parametros nombre_archivo un str con el nombre del archivo y contenido: otro str que tiene el contenido a guardar en el archivo
 # Devuelve True en caso ed que el archivo se haya creado con exito, cso contrario devuelve False
-    archivo = open("archivo.csv", "w")
+    archivo = open("archivo.csv", "w+")
     
     if contenido in archivo:
-        mensaje = "Se creó el archivo" ,nombre_archivo
+
+        mensaje = "Se creó el archivo" , nombre_archivo
         retorno =  True
     else:
         mensaje = "Error al creal el archivo", nombre_archivo
         retorno =  False 
         
+    print(mensaje)
     return retorno
 
 # 1.6
@@ -123,3 +125,4 @@ def obtener_nombre_y_dato(heroe:dict,llave:str)->str:
     string = obtener_nombre_capitalizado(h) + " | " +  llave_capitalizada + ": " + heroe[llave]
 
     return string
+

@@ -45,29 +45,46 @@ def calcular_promedio_genero(lista:list[dict],llave:str,genero:str)-> float:
     return promedio
 
 
-def calcular_maximo(lista,llave,nombre): #QUE DEVUELVE?
+def calcular_maximo(lista,llave): #QUE DEVUELVE?
 # esta funcion itera sobre una lista de diccionarios y calcula el valor mas grande que existe asignado a la clave pasada como parametro 
     nombre_max = None
     max = None
     for i in lista:
         if max == None or float(i[llave]) > max: #recordar castear en caso de ser necesario
             max = float(i[llave]) 
-            nombre_max = i[nombre]
+            nombre_max = i[max]
             
     return max , nombre_max
 
 
 def calcular_minimo(lista:list[dict],llave): #QUE DEVUELVE?
-# esta funcion itera sobre una lista de diccionarios y calcula el valor mas pequeño que existe asignado a la clave pasada como parametro 
-    nombre_mini = None
-    mini = None
     for i in lista:
         if mini == None or float(i[llave]) < mini: #recordar castear en caso de ser necesario
                 mini = float(i[llave])
                 nombre_mini = i[mini]
-                
-    return mini , nombre_mini             
-
+            
+    return mini , nombre_mini  
+    
+def calcular_maximo_o_minimo(lista:list[dict],llave:str,tipo:str):
+# esta funcion itera sobre una lista de diccionarios y calcula el valor mas pequeño que existe asignado a la clave pasada como parametro 
+    nombre_mini = None
+    mini = None
+    if tipo == "menor":
+        for i in lista:
+            if mini == None or float(i[llave]) < mini: #recordar castear en caso de ser necesario
+                    mini = float(i[llave])
+                    nombre_mini = i[mini]    
+        return mini , nombre_mini             
+    elif tipo == "mayor":
+            nombre_max = None
+            max = None
+            for i in lista:
+                if max == None or float(i[llave]) > max: #recordar castear en caso de ser necesario
+                    max = float(i[llave]) 
+                    nombre_max = i[max]
+            
+    return max , nombre_max
+        
 
 def calcular_min_genero(lista:list,llave:str,genero:str):
     # esta funcion itera sobre una lista de diccionarios y calcula el valor mas pequeño que existe dentro del genero especificado, asignado a la clave pasada como parametro 
@@ -95,13 +112,7 @@ def calcular_max_genero(lista:list,llave:str,genero:str):
     return nombre_max # solo retorno el nombre
 calcular_max_genero(lista_heroes,"altura","F")
 
-
-
-
-
-
-
-
+AGREGAR VALIDACIONES CON REGEX DE TODOS LOS TIPOS DE DATOS CON MATCH
         
 --------------------------------------------------------------------------------
 
