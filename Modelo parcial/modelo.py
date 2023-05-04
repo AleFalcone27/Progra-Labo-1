@@ -14,7 +14,7 @@ def parse_json_stark(nombre_archivo:str)->list[dict]:
         
     return dict_json["heroes"] 
 
-lista_heroes = parse_json_stark("data_stark.json")
+lista_heroes = parse_json_stark("Modelo parcial\data_stark.json")
 
 lista_aux = lista_heroes.copy()
 
@@ -35,22 +35,16 @@ def listar_n_heroes(lista:list, cantidad:int)-> list:
 
     if cantidad <= len(lista_aux):
         lista_n_heroes = []
-        
         # Agregar la funcion sanitizar entero positivo
     
         for i in range(cantidad):
-            heroe = lista_aux[i]["nombre"]
+            heroe = i["nombre"] 
             lista_n_heroes.append(heroe) 
             print(heroe)
         
         return lista_n_heroes   
-        
     else:
-        
         print("No existen tantos heroes")
-        
-
-# listar_n_heroes(lista_aux,23)
 
 # 2
 def ordenar(lista:list[dict], clave:str, tipo = "ASC")->list:
@@ -71,7 +65,6 @@ def ordenar(lista:list[dict], clave:str, tipo = "ASC")->list:
                     lista[i+1] = aux
                     bandera_swap = True      
     return lista_aux
-lista_aux = ordenar(lista_aux,"altura","ASC")
 
 # 3
 lista_aux = ordenar(lista_aux,"fuerza","ASC")
@@ -107,12 +100,7 @@ def calcular_menor_o_mayor(lista:list[dict],llave:str,tipo:str,comparador:float)
         retorno = lista_mayores   
 
     return retorno
-# promedio = calcular_promedio(lista_aux,"altura")
-# calcular_menor_o_mayor(lista_aux,"altura","menor",promedio)
-# print(promedio)
-# normalizar_flotantes(lista_aux, "altura")
 
-# lista_aux = ordenar(lista_aux, "altura", "ASC")
 
 # 5
 def sort_llave(lista:list[dict],llave:str,valor:str):
@@ -122,16 +110,6 @@ def sort_llave(lista:list[dict],llave:str,valor:str):
             lista_sort.append(i["nombre"])
     return lista_sort
     
-# print(sort_llave(lista_aux,"inteligencia","average"))
-
-
-# def depurar_ultimo_separador(separador:str,contenido:str,nombre_archivo:str,largo_cotenido:int):
-#     with open(nombre_archivo, "w") as archivo:
-#             archivo.readlines()
-#             re.sub(separador,"",contenido,largo_cotenido)
-#             print(contenido)
-#   depurar_ultimo_separador(",",contenido,"parcial.cvs",len(contenido)) 
-
 
 # 6
 def export_a_csv(contenido:list,nombre_archivo:str):
@@ -144,4 +122,51 @@ def export_a_csv(contenido:list,nombre_archivo:str):
 export_a_csv(sort_llave(lista_aux,"inteligencia","average"),"modelo.cvs")
 
 
+# Menu
+opciones = ["1) Listar Heroes","2) Listar altura", "3) Listar por fuerza","4) Calcular promedio","5) Salir"]
+
+
+def menu_principal(opciones):
+    for i in opciones:
+        print(i)
         
+    opcion_elegida = input("Elija una opcion: ")
+    
+    return opcion_elegida
+
+
+def app():
+    while True:
+        opcion_elegida = menu_principal(opciones)
+        opcion_elegida = int(opcion_elegida)
+
+        match opcion_elegida:
+            case 1:
+            # listar_n_heroes(lista_aux,5)
+                print("ME mato")
+            case 2:
+                modo = input("Queres ordenarlos de manera Ascendente o Descendente [ASC-DESC]: ")
+                if re.match("[ASC|DESC]",modo):
+                    print(ordenar(lista_aux,"altura", modo))
+                else:
+                    print("Error: la opcion ingresada no es valida")
+            case 3:
+                modo = input("Queres ordenarlos de manera Ascendente o Descendente [ASC-DESC]: ")
+                if re.match("[ASC|DESC]",modo):
+                    print(ordenar(lista_aux,"altura", modo))
+                else:
+                    print("Error: la opcion ingresada no es valida")
+            case 4:
+                llave = input("El promedio de que dato qures ver [ALTURA - PESO - FUERZA]: ")
+                llave = llave.upper()
+                if re.match("[ALTURA|PESO|FUERZA]",llave):
+                    promedio = print(calcular_promedio(lista_aux,llave))
+                    tipo = input("Queres quedarte con aquellos heroes que son mayores o menores al promedio:  ")
+                    if re.match("[MENORES|MAYORES]", tipo):
+
+                        menores_o_mayores = calcular_menor_o_mayor(lista_aux,llave,tipo,promedio)
+                        print(menores_o_mayores)
+
+app()   
+
+
