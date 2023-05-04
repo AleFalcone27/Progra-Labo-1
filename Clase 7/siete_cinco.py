@@ -33,7 +33,7 @@ if __name__ == "__main__":
     # en True)
     # esta funcion devuelve o imprime el patron pasado como parametro (patron) la cantidad de veces que lo determinemos en el argumento largo
 
-        if len(patron) > 0 and len(patron) and largo > 0 and largo < 236 :
+        if len(patron) > 0 and largo > 0 and largo < 236 :
             for i in range(largo):
                 
                 string = patron * largo

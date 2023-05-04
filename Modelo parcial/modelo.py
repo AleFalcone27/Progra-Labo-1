@@ -33,20 +33,18 @@ normalizar_entero(lista_aux,"fuerza")
 # 1
 def listar_n_heroes(lista:list, cantidad:int)-> list:
 
-    if cantidad <= len(lista_aux):
-        lista_n_heroes = []
-        # Agregar la funcion sanitizar entero positivo
-    
-        for i in range(cantidad):
-            heroe = i["nombre"] 
-            lista_n_heroes.append(heroe) 
-            print(heroe)
+    if cantidad <= len(lista):
+        lista = lista[0:cantidad]
         
-        return lista_n_heroes   
+        for i in lista:
+            print(i["nombre"])
     else:
         print("No existen tantos heroes")
+    
+    return lista
 
-# 2
+
+# 2 # 3
 def ordenar(lista:list[dict], clave:str, tipo = "ASC")->list:
     bandera_swap = True
     while bandera_swap == True: 
@@ -63,13 +61,11 @@ def ordenar(lista:list[dict], clave:str, tipo = "ASC")->list:
                     aux = lista[i]
                     lista[i] = lista[i+1]
                     lista[i+1] = aux
-                    bandera_swap = True      
-    return lista_aux
+                    bandera_swap = True     
 
-# 3
-lista_aux = ordenar(lista_aux,"fuerza","ASC")
+    return lista
 
-# 4 Anidar esta con calcular menor o mayor
+# 4 
 def calcular_promedio(lista:list[dict], llave)-> float:
 # esta funcion itera sobre una lista de diccionarios acumulando el valor asignado a la key pasada como parametro y sacando el promedio
     acum = 0
@@ -88,26 +84,25 @@ def calcular_promedio(lista:list[dict], llave)-> float:
 def calcular_menor_o_mayor(lista:list[dict],llave:str,tipo:str,comparador:float) -> list:
     lista_menores = []
     lista_mayores = []
-    if tipo == "menor":
+    if tipo == "menores":
         for i in lista:
-            if i["altura"] < comparador: #recordar castear en caso de ser necesario
-                lista_menores.append(i["nombre"])
+            if i[llave] < float(comparador): #recordar castear en caso de ser necesario
+                lista_menores.append(i)
         retorno = lista_menores
-    if tipo == "mayor":
+    if tipo == "mayores":
         for i in lista:
-            if i["altura"] > comparador: #recordar castear en caso de ser necesario
-                lista_mayores.append(i["nombre"])         
+            if i[llave] > float(comparador): #recordar castear en caso de ser necesario
+                lista_mayores.append(i)         
         retorno = lista_mayores   
 
     return retorno
 
-
 # 5
 def sort_llave(lista:list[dict],llave:str,valor:str):
     lista_sort = []
-    for i in lista_aux:
+    for i in lista:
         if re.match(valor,i[llave]):
-            lista_sort.append(i["nombre"])
+            lista_sort.append(i)
     return lista_sort
     
 
@@ -121,10 +116,8 @@ def export_a_csv(contenido:list,nombre_archivo:str):
             archivo.write(valor)   
 export_a_csv(sort_llave(lista_aux,"inteligencia","average"),"modelo.cvs")
 
-
 # Menu
-opciones = ["1) Listar Heroes","2) Listar altura", "3) Listar por fuerza","4) Calcular promedio","5) Salir"]
-
+opciones = ["1) Listar Heroes","2) Listar altura", "3) Listar por fuerza","4) Calcular promedio","5) Filtrar por tipos de inteligencia "]
 
 def menu_principal(opciones):
     for i in opciones:
@@ -134,39 +127,81 @@ def menu_principal(opciones):
     
     return opcion_elegida
 
-
 def app():
+    flag1 = False
     while True:
         opcion_elegida = menu_principal(opciones)
         opcion_elegida = int(opcion_elegida)
 
         match opcion_elegida:
             case 1:
-            # listar_n_heroes(lista_aux,5)
-                print("ME mato")
+                cantidad = input("Cuantos héroes queres ver?: ")
+                if re.match("[0-9]+",cantidad):
+                    cantidad = int(cantidad)
+                    if cantidad > 0 and cantidad < 24: 
+                        print("-------")
+                        if flag1 == False:
+                            lista_mod = listar_n_heroes(lista_aux,cantidad)
+                            print(lista_mod)
+                            flag1 = True
+                        else:
+                            lista_mod = listar_n_heroes(lista_mod,cantidad)
+                        print("-------")
+                else:
+                    print("---Error: Ingresa un número valido Por favor [0-24] ---")
+                
             case 2:
                 modo = input("Queres ordenarlos de manera Ascendente o Descendente [ASC-DESC]: ")
                 if re.match("[ASC|DESC]",modo):
-                    print(ordenar(lista_aux,"altura", modo))
+                    lista_mod = ordenar(lista_mod,"altura", modo)
+                    print("-------")
+                    for i in lista_mod:
+                        print(i["nombre"]) 
+                    print("-------")
+        
                 else:
-                    print("Error: la opcion ingresada no es valida")
+                    print("--Error: la opcion ingresada no es valida--")
+                    
             case 3:
                 modo = input("Queres ordenarlos de manera Ascendente o Descendente [ASC-DESC]: ")
                 if re.match("[ASC|DESC]",modo):
-                    print(ordenar(lista_aux,"altura", modo))
+                    lista_mod = ordenar(lista_mod,"altura", modo)
+                    print("-------")
+                    for i in lista_mod:
+                        print(i["nombre"]) 
+                    print("-------")
+                else:
+                    print("--Error: la opcion ingresada no es valida--")
+                    
+            case 4:
+                llave = input("Ingresa el dato del cual quieras ver un promedio [ALTURA - PESO - FUERZA]: ")
+                llave = llave.lower()
+                if re.match("[altura|peso|fuerza]",llave):
+                    promedio = calcular_promedio(lista_mod,llave)
+                    print("-------")
+                    print(promedio)
+                    print("-------")
                 else:
                     print("Error: la opcion ingresada no es valida")
-            case 4:
-                llave = input("El promedio de que dato qures ver [ALTURA - PESO - FUERZA]: ")
-                llave = llave.upper()
-                if re.match("[ALTURA|PESO|FUERZA]",llave):
-                    promedio = print(calcular_promedio(lista_aux,llave))
-                    tipo = input("Queres quedarte con aquellos heroes que son mayores o menores al promedio:  ")
-                    if re.match("[MENORES|MAYORES]", tipo):
+                tipo = input("Queres quedarte con aquellos heroes que son mayores o menores al promedio:  ")
+                tipo = tipo.lower()
+                if re.match("[menores|mayores]", tipo):
+                    lista_mod = calcular_menor_o_mayor(lista_mod,llave,tipo,promedio)
+                    print("-------")
+                    for i in lista_mod:
+                        print(i)
+                    print("-------")
+            
+            case 5:
+                tipo = input("Elije un tipo de inteligencia [Average - Good - High]")
+                if re.match("[average|good|high]",tipo):
+                    lista_mod = sort_llave(lista_mod,"inteligencia",tipo)
+                else: ## SEguir aca
 
-                        menores_o_mayores = calcular_menor_o_mayor(lista_aux,llave,tipo,promedio)
-                        print(menores_o_mayores)
+                    
 
-app()   
+
+app()       
+
 
 
