@@ -1,10 +1,18 @@
+def generar_pared(largo_palabra:str,ubicacion):
+    string = ""
+    for i in range(ubicacion - len(palabra)):
+        string = string + " " 
+    string = string + "|"
+    return string
 
-lista_aux = [0,1,2,3,4,5,6,7]
-
-cantidad= 5
-    
-if cantidad <= len(lista_aux):
-
-    lista_aux = lista_aux[0:cantidad]
-    
-print(lista_aux)
+palabra = "hola"
+print("---------------------------")
+print(palabra, generar_pared(len(palabra), 25))
+palabra = "nico"
+print(palabra, generar_pared(len(palabra), 25))
+pabra = "te"
+print(palabra, generar_pared(len(palabra), 25))
+palabra = "amo"
+print(palabra, generar_pared(len(palabra), 25))
+print(palabra, generar_pared(len(palabra), 25))
+print("---------------------------")

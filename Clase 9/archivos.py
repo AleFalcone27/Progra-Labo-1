@@ -55,5 +55,21 @@ def parse_csv_stark(nombre_archivo:str)->list:
         archivo.close()
         return lista_heroes
     
-    lista_heroes_star("")
-    pirnt(lista_heroes)
+
+def leer_csv(ruta:str):
+    lista_retorno = []
+    with open(ruta, "r") as archivo:
+        for usuario in archivo:
+            usuario = usuario.replace("(\n"," ")
+            lista_aux = usuario.split(",")
+            lista_retorno.append(lista_aux)
+    return lista_retorno
+
+def guardar_csv(ruta:str,lista_usuarios:list[dict]):
+    with open(ruta,"w") as archivo:
+        for usuario in lista_usuarios:
+            archivo.write(",".join(usuario)+"(\n")
+
+lista_usuarios = leer_csv(ruta)
+guardar_csv("prueba.csv",lista_usuarios)
+print(lista_usuarios)

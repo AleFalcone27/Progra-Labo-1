@@ -1,0 +1,147 @@
+{
+    "juegos" :[ 
+        {
+            "nombre": "Minecraft",
+            "ventas": "200000000",
+            "plataforma": ["PC", "XBOX", "PLAYSTATION", "NINTENDO"],
+            "fecha_lanzamiento": "18 de noviembre de 2011",
+            "desarrolladora": "Mojang Studios",
+            "genero": "Sandbox",
+            "precio": "26.95",
+            "critica": "9.0",
+            "clasificacion": "E"
+        },
+        {
+            "nombre": "Tetris",
+            "ventas": "170000000",
+            "plataforma": ["GAME BOY", "NES", "PC", "Mobile"],
+            "fecha_lanzamiento": "6 de junio de 1984",
+            "desarrolladora": "The Tetris Company",
+            "genero": "Puzzle",
+            "precio": "0.99",
+            "critica": "8.5",
+            "clasificacion": "E"
+        },
+        {
+            "nombre": "Grand Theft Auto V",
+            "ventas": "140000000",
+            "plataforma": ["PC", "XBOX ONE", "XBOX 360", "PLAYSTATION 4", "PLAYSTATION 3"],
+            "fecha_lanzamiento": "17 de septiembre de 2013",
+            "desarrolladora": "Rockstar North",
+            "genero": "Acción y aventura",
+            "precio": "29.99",
+            "critica": "9.5",
+            "clasificacion": "M"
+        },
+        {
+            "nombre": "PlayerUnknown's Battlegrounds",
+            "ventas": "70000000",
+            "plataforma": ["PC", "XBOX ONE", "PLAYSTATION 4", "Mobile"],
+            "fecha_lanzamiento": "20 de diciembre de 2017",
+            "desarrolladora": "PUBG Corporation",
+            "genero": "Battle royale",
+            "precio": "29.99",
+            "critica":"8.0",
+            "clasificacion": "T"
+        },
+        {
+            "nombre": "Wii Sports",
+            "ventas":"82000000",
+            "plataforma": ["WII"],
+            "fecha_lanzamiento": "19 de noviembre de 2006",
+            "desarrolladora": "NINTENDO",
+            "genero": "Deporte",
+            "precio": 2,
+            "critica": "8.5",
+            "clasificacion": "E"
+        },
+        {
+            "nombre": "Super Mario Bros.",
+            "ventas": "480000000",
+            "plataforma": ["NES"],
+            "fecha_lanzamiento": "13 de septiembre de 1985",
+            "desarrolladora": "NINTENDO",
+            "genero": "Plataformas",
+            "precio": "7.99",
+            "critica": "9.5",
+            "clasificacion": "E"
+        },
+        {
+            "nombre": "Fortnite",
+            "ventas": "350000000",
+            "plataforma": ["PC", "XBOX ONE", "XBOX SERIES X/S", "PLAYSTATION 4", "PLAYSTATION 5", "NINTENDO SWITCH", "MOBILE"],
+            "fecha_lanzamiento": "25 de julio de 2017",
+            "desarrolladora": "Epic Games",
+            "genero": "Battle royale",
+            "precio": "0.00",
+            "critica": "8.5",
+            "clasificacion": "T"
+        },
+        {
+            "nombre": "Call of Duty: Modern Warfare",
+            "ventas": "30000000",
+            "plataforma": ["PC", "XBOX ONE", "PLAYSTATION 4"],
+            "fecha_lanzamiento": "25 de octubre de 2019",
+            "desarrolladora": "Infinity Ward",
+            "genero": "Shooter",
+            "precio": "59.99",
+            "critica":" 8.5",
+            "clasificacion": "M"
+        },
+        {
+            "nombre": "The Legend of Zelda: Ocarina of Time",
+            "ventas": "12000000",
+            "plataforma": ["NINTENDO 64", "NINTENDO 3DS"],
+            "fecha_lanzamiento": "21 de noviembre de 1998",
+            "desarrolladora": "NINTENDO",
+            "genero": "Acción y aventura",
+            "precio": "39.99",
+            "critica": "9.5",
+            "clasificacion": "E"
+        },
+        {
+            "nombre": "League of Legends",
+            "ventas": "115000000",
+            "plataforma": ["PC"],
+            "fecha_lanzamiento": "27 de octubre de 2009",
+            "desarrolladora": "Riot Games",
+            "genero": "MOBA",
+            "precio": "0.00",
+            "critica": "8.0",
+            "clasificacion": "T"
+        },
+        {
+            "nombre": "Overwatch",
+            "ventas": "50000000",
+            "plataforma": ["PC", "XBOX ONE", "PLAYSTATION 4"],
+            "fecha_lanzamiento": "24 de mayo de 2016",
+            "desarrolladora": "Blizzard Entertainment",
+            "genero": "Shooter",
+            "precio": "19.99",
+            "critica": "9.0",
+            "clasificacion": "T"
+        },
+        {
+            "nombre": "Pokemon Red/Green/Blue/Yellow",
+            "ventas": "47200000",
+            "plataforma": ["GAME BOY", "VIRTUAL CONSOLE"],
+            "fecha_lanzamiento": "27 de febrero de 1996",
+            "desarrolladora": "Game Freak",
+            "genero": "RPG",
+            "precio": "9.99",
+            "critica": "9.0",
+            "clasificacion": "E"
+        },
+        {
+            "nombre": "World of Warcraft",
+            "ventas": "11700000",
+            "plataforma": ["PC"],
+            "fecha_lanzamiento": "23 de noviembre de 2004",
+            "desarrolladora": "Blizzard Entertainment",
+            "genero": "MMORPG",
+            "precio": "14.99",
+            "critica": "9.0",
+            "clasificacion": "T"
+        }
+    ]
+}

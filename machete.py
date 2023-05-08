@@ -1,7 +1,128 @@
 ## MACHETE ##
 # - TENGO QUE PROBAR TODAS LAS FUNCIOENES PARA VER SI FUNCIONAN 
 
-lista = lista_personajes
+# --- NORMALIZAR DATOS -- #
+ 
+# -- NORMALIZA TODOS LOS DATOS QUE DE LA LIST:[DICT] QUE RECORREMOS -- #
+
+def normalizar_flotantes(lista:list[dict], llave:str)->float:
+    for i in lista:
+        i[llave] = float(i[llave]) 
+        
+
+def normalizar_entero(lista:list[dict], llave:str)->int:
+    for i in lista:
+        i[llave] = int(i[llave]) 
+
+# -- NORMALIZA DATOS ESPECIFICOS -- #
+
+def sanitizar_entero(num_str:str):
+    
+# esta funcion determina si el str recibido como parametro es un numero entero positivo y lo retorna  
+
+    num_str = str(num_str)
+    num_str = num_str.strip()
+    
+    if re.search("[a-zA-Z]+",num_str):
+        return -1
+    elif re.search("^-", num_str):
+        return -2
+    elif re.search("[0-9+]",num_str):
+        num_str = int(num_str)
+        return num_str
+    else:
+        return -3
+
+
+def sanitizar_flotante(num_str:str):
+    
+# esta funcion determina si el str recibido como parametro es un flotante positivo
+    num_str = str(num_str)
+    num_str = num_str.strip()
+    
+    if re.search("[a-zA-Z]+", num_str):
+        return -1
+    elif re.search("^-",num_str):
+        return -2
+    elif re.search("[0-9+]",num_str):
+        num_str = float(num_str)
+        return num_str
+    else: 
+        return -
+
+
+def sanitizar_string(num_str:str, valor_por_defecto="-"):
+
+# determina si el str recibido como parametro es solo texto
+
+    num_str = re.sub("/"," ",num_str)
+    
+    if re.search("[0-9+]",num_str):
+        return "N/A"
+    elif num_str == "":
+        valor_por_defecto = valor_por_defecto.lower()
+        return valor_por_defecto
+    else:
+        num_str = num_str.lower()
+        return num_str
+
+
+def sanitizar_dato(heroe:dict,clave:str,tipo_dato:str):
+
+# sanitiza utilizando las funciones creadas en los puntos anteriores segun el tipo de dato que le pasemos como parametro 
+# heroe: diccionario con los datos de un personaje
+# clave: clave del valor que queremos sanitizar en el diccionario
+# tipo_dato: str que representa el tipo de dato a sanitizar
+
+    if tipo_dato == 'str':
+        dato_sanitizado = sanitizar_string(clave)
+        retorno = dato_sanitizado
+
+    elif tipo_dato == 'float':
+        dato_sanitizado = sanitizar_flotante(clave)
+        retorno = dato_sanitizado
+        
+    elif tipo_dato == 'int':
+        dato_sanitizado = sanitizar_entero(clave) 
+        retorno = dato_sanitizado
+
+## -- DECORADORES -- ##
+
+def generara_separador(patron:str, largo:int, imprimir = True):
+
+    # toma como parametros:
+    # ● patron: un carácter que se utilizará como patrón para generar el
+    # separador
+    # ● largo: un número que representa la cantidad de caracteres que va
+    # ocupar el separador.
+    # ● imprimir: un parámetro opcional del tipo booleano (por default definir
+    # en True)
+    # esta funcion devuelve o imprime el patron pasado como parametro (patron) la cantidad de veces que lo determinemos en el argumento largo
+
+        if len(patron) > 0 and largo > 0 and largo < 236 :
+            for i in range(largo):
+                
+                string = patron * largo
+                
+            if imprimir == True:
+                
+                print(string, end="")
+            else:
+                
+                return string
+            
+        else: 
+            print("N/A")
+
+def generar_pared(linea:str,ubicacion:int,separador:str):
+    string = ""
+    for i in range(ubicacion - len(linea)):
+        string = string + " " 
+    string = string + "|"
+    return string
+
+
+## -- OPERACIONES -- ##
 
 
 def informar_nombre(lista:list[dict], llave:str):
@@ -110,13 +231,8 @@ def calcular_max_genero(lista:list,llave:str,genero:str):
                 nombre_max = i["nombre"]
             
     return nombre_max # solo retorno el nombre
-calcular_max_genero(lista_heroes,"altura","F")
 
-AGREGAR VALIDACIONES CON REGEX DE TODOS LOS TIPOS DE DATOS CON MATCH
-        
---------------------------------------------------------------------------------
 
-# H. Calcular e informar cual es el superhéroe más y menos pesado.
 def informar_mas_y_menos_pesado(lista):
     mas_pesado = None
     menos_pesado = None
@@ -128,29 +244,45 @@ def informar_mas_y_menos_pesado(lista):
             menos_pesado = float(i["peso"]) 
             nombre_menos_pesado = i["nombre"]
 
-def menu_principal(opciones):
-    for opcion in opciones:
-        print(opcion)
-    
-    opcion_elegida = input("Elija una opcion: ") 
+## -- MENU PRINCIPAL CON OPCIONES --
 
+opciones = ["","","","","",""]
+
+def menu_principal(opciones):
+    for i in opciones:
+        print(i)
+        
+    opcion_elegida = input("Elija una opcion: ")
+    
     return opcion_elegida
 
-while True:
-    opcion_elegida = menu_principal(opciones)
-    opcion_elegida = int(opcion_elegida) # Casteo la variable y la renombro
+def app():
     
-    match opcion_elegida:
-        case 1:
-            informar_nombre(lista)    
-        case 2:
-            informar_nombre_y_altura(lista)
-        case 3:
-            altura_promedio = informar_altura_promedio(lista)
-            print(altura_promedio)
-        case 4:
-            identidad_mas_alto, identidad_mas_bajo = informar_mas_y_menos_alto(lista)
-            print(identidad_mas_alto,identidad_mas_bajo)
-        case 5:        
-            informar_mas_y_menos_pesado(lista)
+##recordemos castear la opcion
+    
+    while True:
         
+        opcion_elegida = menu_principal(opciones)
+        
+        if opcion_elegida == 1:
+            
+
+        elif opcion_elegida == 2:
+
+                    
+        elif opcion_elegida == 3:
+
+                    
+        elif opcion_elegida == 4:
+        
+            
+        elif opcion_elegida == 5:
+            
+
+        elif opcion_elegida == 6:
+
+            
+        elif opcion_elegida == 7:
+            
+        else:
+            break
