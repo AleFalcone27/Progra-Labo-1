@@ -1,0 +1,121 @@
+--Funciones lambda--
+
+	No tiene nombre que la defina
+	Funciones muy pequeñas
+	Trabaja de manera simple
+
+def sumar(a,b)
+	return a + b
+lambda a, b : a + b
+	
+	despues de los : va el retorno
+
+	print(lambda a, b : a + b(4,5)) #9
+	
+	sumar = lambda a, b : a + b
+	print(sumar(4,5))
+
+--Operadores ternarios--
+	
+	Es una abreviacion del if en una sola linea
+
+	plantilla:
+		opcion_1 if condición else opcion_2
+
+
+	resultado_if_true if a < b else resltado_if_false
+	lo que va a ocurrir con respecto a lo verdadero CONDICION	lo que va a ocurrir con respecto a lo falso
+
+	mayor = lambda a, b : a if a > b else b
+		esta funcion devuelve a si a es mayor a b sino retorna b 
+
+	print(mayor(4,5)) #5
+	
+--Lista--
+	-Es muy versatil ya que podemos almacenar un conjunto arbitrario de datos
+
+	-COPIADO SUPERFICIAL 
+		Se copian solamente las referencias a los elementos contenidos en el objeto
+		lista_1 = [["MArty","McFly"], "Emmett", "Biff"]
+		lista_2 = lista_1.copy()
+		lista_1[0][0] = "MARTY"	
+		print(lista_2) 
+		# [["MARTY","McFly"], "Emmett", "Biff"]
+		Si afectamos si modificamos la lista original la copia tambien se va a modificar 
+			Pero si afectamos la segunda la primera tambien se va a modifica
+
+	-COPIADO PFRUNDO
+		from copy import deepcopy
+		lista_1 = [["MArty","McFly"], "Emmett", "Biff"]
+		lista_2 = lista_1.copy()
+		lista_1[0][0] = "MARTY"	
+		print(lista_2)
+		# [["MARTY","McFly"], "Emmett", "Biff"]
+		La copia profunda es una copia INDEPENDIENTE 
+		Si modificamos la lista original la copia no se modifica		
+			Pero si afectamos la copia la lista original tampoco se va a modificar
+
+	-.append()
+		-Añade elemento al final de la lista
+
+	-.insert()
+		-Añade un elemento en una posicion o indice determinado 
+		lista.insert(indice,elemento_a_insertar)
+	-.extend()
+		-Permite añadir una lista a la lista inicial
+			-recibe como parametro una lista
+	-.pop()
+		-Por defecto elimina el ultimo pero le puedo pasar por parametros otro indice
+		-Retorna el elemento ubicado en el indice pasado como parametro
+
+	-.remove(objeto_a_eliminar)
+		-print()
+	
+	-.index()
+		-Recibe como parametro un objeto y devuelve el indice de su primera aparicion u ocurrencia
+		
+	-.enumerate()
+		for i,elemento in enumerate(lista1):
+			print(indice,elemnto)
+	-.zip()
+		-Permite iterar varias listas a la vez
+	-.map()
+		- Pasa como parametros a una funcion a cada uno de los eleentro de una lista, dando como resultado			una nueva lista formada por los elementos que dicah funcion retorna
+			lista = ["Marty","Emmett","Biff"]
+			lista_resultado = list(map(str.upper,lista) # Como devuelve un objeto map lo casteamos a list	
+			print(lista_resultado)
+			#["MARTY", "EMMETT", "BIFF"]
+		
+	-.filter()
+		-Filtra una lista de elementos para los que una funcion devuelve True y los devuelves
+		lista = [17,17,18]
+		lista_resultado = lista(filter(lambda elem : elem >= 18, lista))
+		print(lista_resultado)
+		# [71,18]
+
+	-.reduce()
+		- La funcion reduce se utiliza principalmente para llevar a cabo un calculo acumulativo sobre una lista de valores y devolver el resultado, esta incluida en el modulo functools.
+		from functiools import reduce
+		lista = [17,71,18]
+		suma = reduce(lambda x, y : x + y,lista)
+		print(suma)
+
+	-.shuffle()
+		-Es un metodo del modulo random, se utiliza para mezclar una lista
+		from random import shuffle
+		lista = [15,17,18]
+		shuffle(lista)
+		pinrt(lista) # [18,15,17]	
+
+	-.sort()
+		-Ordena de menor a mayor
+		-lista = [19,18,17]
+		-lista.sort()
+		-print(lista) # 19,18,17
+		sort(reverse=True) Para hacerlo de mayor a menor
+		Tiene un parametro ey para especificar una funcion que se llamara por cada elemento d la lista y su retorno se utilizara para hacer las comparaciones
+	
+		Para sortear segun la longitud de la key 
+		lista = ["Marty","Emmett","Biff"]
+		lista.sort(key,len)
+		print(lista)

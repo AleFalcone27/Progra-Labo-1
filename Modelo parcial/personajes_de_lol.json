@@ -1,0 +1,346 @@
+{
+    "personajes": [
+        {
+        "nombre": "Ashe",
+        "rol": "Tirador",
+        "atributos": {
+            "vida": 539,
+            "mana": 280,
+            "ataque": 59,
+            "defensa": 26,
+            "velocidad": 325
+        }
+        },
+        {
+        "nombre": "Garen",
+        "rol": "Luchador",
+        "atributos": {
+            "vida": 616,
+            "mana": 0,
+            "ataque": 66,
+            "defensa": 36,
+            "velocidad": 340
+        }
+        },
+        {
+        "nombre": "Lux",
+        "rol": "Mago",
+        "atributos": {
+            "vida": 490,
+            "mana": 480,
+            "ataque": 50,
+            "defensa": 18,
+            "velocidad": 330
+        }
+        },
+        {
+        "nombre": "Ahri",
+        "rol": "Mago",
+        "atributos": {
+            "vida": 526,
+            "mana": 418,
+            "ataque": 53,
+            "defensa": 20,
+            "velocidad": 330
+        }
+        },
+        {
+        "nombre": "Akali",
+        "rol": "Asesino",
+        "atributos": {
+            "vida": 575,
+            "mana": 200,
+            "ataque": 62,
+            "defensa": 23,
+            "velocidad": 345
+        }
+        },
+        {
+        "nombre": "Annie",
+        "rol": "Mago",
+        "atributos": {
+            "vida": 524,
+            "mana": 418,
+            "ataque": 50,
+            "defensa": 19,
+            "velocidad": 335
+        }
+        },
+        {
+        "nombre": "Asol",
+        "rol": "Mago",
+        "atributos": {
+            "vida": 575,
+            "mana": 350,
+            "ataque": 57,
+            "defensa": 19,
+            "velocidad": 325
+        }
+        },
+        {
+        "nombre": "Blitzcrank",
+        "rol": "Apoyo",
+        "atributos": {
+            "vida": 582,
+            "mana": 267,
+            "ataque": 62,
+            "defensa": 40,
+            "velocidad": 325
+        }
+        },
+        {
+        "nombre": "Brand",
+        "rol": "Mago",
+        "atributos": {
+            "vida": 519,
+            "mana": 469,
+            "ataque": 57,
+            "defensa": 21,
+            "velocidad": 340
+        }
+        },
+        {
+        "nombre": "Caitlyn",
+        "rol": "Tirador",
+        "atributos": {
+            "vida": 510,
+            "mana": 315,
+            "ataque": 62,
+            "defensa": 28,
+            "velocidad": 325
+        }
+        },
+        {
+        "nombre": "Darius",
+        "rol": "Luchador",
+        "atributos": {
+            "vida": 582,
+            "mana": 263,
+            "ataque": 64,
+            "defensa": 39,
+            "velocidad": 340
+        }
+        },
+        {
+        "nombre": "Ekko",
+        "rol": "Asesino",
+        "atributos": {
+            "vida": 585,
+            "mana": 280,
+            "ataque": 58,
+            "defensa": 32,
+            "velocidad": 340
+        }
+        },
+        {
+        "nombre": "Evelynn",
+        "rol": "Asesino",
+        "atributos": {
+            "vida": 572,
+            "mana": 315,
+            "ataque": 61,
+            "defensa": 37,
+            "velocidad": 335
+        }
+        },
+        {
+        "nombre": "Fiora",
+        "rol": "Luchador",
+        "atributos": {
+            "vida": 550,
+            "mana": 300,
+            "ataque": 68,
+            "defensa": 33,
+            "velocidad": 345
+        }
+        },
+        {
+        "nombre": "Fizz",
+        "rol": "Asesino",
+        "atributos": {
+            "vida": 570,
+            "mana": 317,
+            "ataque": 58,
+            "defensa": 22,
+            "velocidad": 335
+        }
+        },
+        {
+        "nombre": "Galio",
+        "rol": "Tanque",
+        "atributos": {
+            "vida": 562,
+            "mana": 500,
+            "ataque": 62,
+            "defensa": 29,
+            "velocidad": 335
+        }
+        },
+        {
+        "nombre": "Gnar",
+        "rol": "Luchador",
+        "atributos": {
+            "vida": 510,
+            "mana": 100,
+            "ataque": 59,
+            "defensa": 26,
+            "velocidad": 325
+        }
+        },
+        {
+        "nombre": "Hecarim",
+        "rol": "Luchador",
+        "atributos": {
+            "vida": 580,
+            "mana": 277,
+            "ataque": 66,
+            "defensa": 36,
+            "velocidad": 345
+        }
+        },
+        {
+        "nombre": "Janna",
+        "rol": "Apoyo",
+        "atributos": {
+            "vida": 500,
+            "mana": 350,
+            "ataque": 46,
+            "defensa": 29,
+            "velocidad": 315
+        }
+        },
+        {
+        "nombre": "Jarvan IV",
+        "rol": "Luchador",
+        "atributos": {
+            "vida": 571,
+            "mana": 300,
+            "ataque": 64,
+            "defensa": 29,
+            "velocidad": 340
+        }
+        },
+        {
+        "nombre": "Jinx",
+        "rol": "Tirador",
+        "atributos": {
+            "vida": 610,
+            "mana": 245,
+            "ataque": 57,
+            "defensa": 23,
+            "velocidad": 325
+        }
+        },
+        {
+        "nombre": "Kai'Sa",
+        "rol": "Tirador",
+        "atributos": {
+            "vida": 600,
+            "mana": 344,
+            "ataque": 59,
+            "defensa": 28,
+            "velocidad": 335
+        }
+        },
+        {
+        "nombre": "Kassadin",
+        "rol": "Asesino",
+        "atributos": {
+            "vida": 576,
+            "mana": 397,
+            "ataque": 59,
+            "defensa": 19,
+            "velocidad": 335
+        }
+        },
+        {
+        "nombre": "Kayn",
+        "rol": "Asesino",
+        "atributos": {
+            "vida": 585,
+            "mana": 410,
+            "ataque": 68,
+            "defensa": 33,
+            "velocidad": 340
+        }
+        },
+        {
+        "nombre": "Kha'Zix",
+        "rol": "Asesino",
+        "atributos": {
+            "vida": 573,
+            "mana": 327,
+            "ataque": 63,
+            "defensa": 36,
+            "velocidad": 350
+        }
+        },
+        {
+        "nombre": "Leona",
+        "rol": "Tanque",
+        "atributos": {
+            "vida": 576,
+            "mana": 302,
+            "ataque": 62,
+            "defensa": 44,
+            "velocidad": 335
+        }
+        },
+        {
+        "nombre": "Malphite",
+        "rol": "Tanque",
+        "atributos": {
+            "vida": 574,
+            "mana": 282,
+            "ataque": 61,
+            "defensa": 37,
+            "velocidad": 335
+        }
+        },
+        {
+        "nombre": "Mordekaiser",
+        "rol": "Luchador",
+        "atributos": {
+            "vida": 575,
+            "mana": 100,
+            "ataque": 61,
+            "defensa": 37,
+            "velocidad": 325
+        }
+        },
+        {
+        "nombre": "Nidalee",
+        "rol": "Asesino",
+        "atributos": {
+            "vida": 545,
+            "mana": 295,
+            "ataque": 58,
+            "defensa": 28,
+            "velocidad": 335
+        }
+        },
+        {
+        "nombre": "Nocturne",
+        "rol": "Asesino",
+        "atributos": {
+            "vida": 585,
+            "mana": 273,
+            "ataque": 65,
+            "defensa": 38,
+            "velocidad": 345
+        }
+        },
+        {
+        "nombre": "Orianna",
+        "rol": "Mago",
+        "atributos": {
+            "vida": 530,
+            "mana": 418,
+            "ataque": 40,
+            "defensa": 17,
+            "velocidad": 325
+        }
+        }
+    ]
+}
+

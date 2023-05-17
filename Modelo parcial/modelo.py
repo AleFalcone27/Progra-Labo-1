@@ -106,7 +106,6 @@ def sort_llave(lista:list[dict],llave:str,valor:str):
 # 6
 def export_a_csv(lista:list,nombre_archivo:str):
         
-
     with open(nombre_archivo,"w+") as archivo:
         for heroe in lista:
             linea = str(heroe["nombre"]) + "," + str(heroe["identidad"]) + "," + str(heroe["empresa"]) + "," + str(heroe["altura"]) + "," + str(heroe["peso"]) + "," + str(heroe["genero"]) + "," + str(heroe["color_ojos"]) + "," + str(heroe["color_pelo"]) + "," + str(heroe["fuerza"]) + "," + str(heroe["inteligencia"]) + "\n"  
