@@ -1,0 +1,88 @@
+--Diccionarios-
+
+	-Anidado-
+		diccionario = {'name' : 'Marty','addr': {'number': 9303,'street':'Lyon Drive'}}
+		print(diccionario['addr']['number'],diccionario['addr']['street'])
+
+	-Recorrer diccionarios-
+		diccionario = {'name' : 'Marty', 'edad' : 18}
+		for clave in diccionario:
+		print(clave,diccionario[clave])
+
+		# name Marty
+		# edad 18
+	
+	-Copiado superficial-
+		Superficial (shallow copy), solamente se copian las referencias a los elementos contenidos en el objeto.
+		
+		diccionario = {'name' : ['Marty','Mcfly'], 'edad' : 18}
+		diccionario_copia = diccionario.copy() 
+		diccionario['name'][0] = "MARTY"
+		diccionario['edad'] = 19
+		print(diccionario_copia)
+		# {'name': ['MARTY', 'Mcfly'], 'edad': 18}
+
+
+		
+	-Copiado profundo-
+		Deep copy,  si el objeto contiene subobjetos estos se copian recursivamente.
+
+		diccionario = {'name' : ['Marty','Mcfly'], 'edad' : 18}
+		diccionario_copia = deepcopy(diccionario)  
+		diccionario['name'][0] = "MARTY"
+		diccionario['edad'] = 19
+		print(diccionario_copia)
+		# {'name': ['Marty', 'Mcfly'], 'edad': 18}
+
+	-METODOS-	
+	
+	-get()
+		permite consultar el valor para una clave determinada. El segundo parámetro es el valor a 
+		devolver si no se encuentra la clave (es opcional).
+	
+	-keys()
+		devuelve una lista con todas las claves del diccionario.
+
+	-values()
+		devuelve una lista con todas los valores del diccionario.
+	
+	-items()
+		devuelve una lista con las claves y valores del diccionario. Si se convierte en lista se puede acceder 		utilizando el índice.
+
+	-pop()
+		El método pop() busca y elimina la key que se pasa como parámetro y devuelve su valor 			asociado. Dará un error si se intenta eliminar una key que no existe
+
+		diccionario = {'name' : 'Marty', 'edad' : 18}
+		diccionario.pop('edad')
+		print(diccionario)
+		# {'name': 'Marty'}
+
+		También se puede pasar un segundo parámetro que es el valor a devolver si la key no se 		ha encontrado. En este caso si no se encuentra no habría error.
+
+		diccionario = {'name' : 'Marty', 'edad' : 18}
+		valor_eliminado = diccionario.pop('year','none')
+		print(valor_eliminado)
+		# none
+
+	-update()
+		se llama sobre un diccionario y tiene como entrada otro diccionario. Los value son 			actualizados y si alguna key del nuevo diccionario no esta, es añadida.
+		
+		iccionario = {'name' : 'Marty', 'edad' : 18}
+		diccionario.update({'year' : '1973'})
+		print(diccionario)
+		# {'name': 'Marty', 'edad': 18, 'year': '1973'}
+
+	-clear()
+		elimina todo el contenido del diccionario. 
+
+		diccionario = {'name' : 'Marty', 'edad' : 18}
+		diccionario.clear()
+		print(diccionario)# {}
+
+
+		
+
+		
+
+
+

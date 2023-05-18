@@ -80,7 +80,7 @@ lambda a, b : a + b
 	-.zip()
 		-Permite iterar varias listas a la vez
 	-.map()
-		- Pasa como parametros a una funcion a cada uno de los eleentro de una lista, dando como resultado			una nueva lista formada por los elementos que dicah funcion retorna
+		- Pasa como parametros a una funcion a cada uno de los elementos de una lista, dando como resultado			una nueva lista formada por los elementos que dicah funcion retorna
 			lista = ["Marty","Emmett","Biff"]
 			lista_resultado = list(map(str.upper,lista) # Como devuelve un objeto map lo casteamos a list	
 			print(lista_resultado)
