@@ -7,6 +7,10 @@ REVISAR PARA EL RECU:
 - Validaciones con regex
 - Agilizar la progrmaacion
 
+CHEKEAR LOS DE LAS LISTAS Y BNDERAS EN CADA UNO PRIMERO SE LLAMA CON LA LIST COPIA Y DESPUES CON LA RETORNO 
+CHEEAR LAS CONSIGNAS CON CADA UNO DE LOS PUNTOS 
+AGREGAR LOS DECORADORES Y HACER UNA FUNCION PRINTEAR DATOS PARA LA CONSOLA 
+
 """
 
 # Parseamos al json 
@@ -46,15 +50,14 @@ def filtrar_llave(lista:list[dict],llave:str,valor:str,modo:str):
     lista_filtrada = []
     if modo == "no_esta":
         for i in lista:
-            if not re.match(valor,i[llave].split(",")):
+            if not re.match(valor,i[llave]):
                 lista_filtrada.append(i)
     if modo == "esta":
         for i in lista:
             if re.match(valor,i[llave]):
-                lista_filtrada.append(i)
-            
+                lista_filtrada.append(i)      
     return lista_filtrada
-        
+        #(lista_copia,"genero","Pelea","no_esta")
 
 def filtrar_decada(lista:list[dict],llave:str,año_ingresado:int):
     lista_filtrada = []
@@ -119,10 +122,10 @@ def generara_separador(patron:str, largo:int, imprimir = True):
 def guardar_en_csv(lista:list[dict]):
     with open("juegos_parcial.csv","w+") as archivo:
             for i in lista:
-                linea = str(i["id"]) + "," + i["nombre"] + "," + i["plataforma"] + "," + i["empresa"] + "," + i["anio"] + "," + i["pais"] + "," + str(["genero"]) +"\n"  
+                linea = str(i["id"]) + "|" + i["nombre"] + "|" + i["plataforma"] + "|" + i["modo"]  + "|" + i["empresa"] + "|" + i["anio"] + "|" + i["pais"] + "|" + str(["genero"]) +"\n"  
                 archivo.write(linea)
-
-opciones = ["1) Listar los juegos cuyo genero no contengan la palabra [pelea]","3) Listar los juegos ordenamos por empresa", "5) Exportar a CSV"]
+    return lista
+opciones = ["1) Listar los juegos cuyo genero no contengan la palabra [pelea]","2) Fltrar por decada","3) Listar los juegos por empresa", "5) Exportar a CSV"]
 
 def menu_principal(opciones):
     for i in opciones:
@@ -132,27 +135,27 @@ def menu_principal(opciones):
     
     return opcion_elegida
 
+
+
 def app():
-    
-    flag = False
+
+    flag = False    
+
     while True:
         
         opcion_elegida = menu_principal(opciones)
         match opcion_elegida:
             
-            case "1":
+            case "1": #DONE
                 if flag == False:
                     lista_retorno = filtrar_llave(lista_copia,"genero","Pelea","no_esta")
                     flag = True
                 else:
-                    lista_retorno = filtrar_llave(lista_retorno,"genero","Pelea","no_esta")
-
-                print(generara_separador("-", 50 ,False))
+                    lista_retorno = filtrar_llave(lista_retorno,"genero","Pelea\.","no_esta")
                 for i in lista_retorno:
-                    print(i["nombre"], "Genero: ", i["genero"])
-                print(generara_separador("-", 50 ,False))
-
-            case "2":
+                    print(str(i["id"]) + " - " + i["nombre"] + " - " + i["plataforma"] + " - " + i["empresa"] + " - " + i["anio"] + " - " + i["pais"] + " - " + str(i["genero"]) + "\n")
+                        
+            case "2": #DONE
                 cont = 0
                 decada = input("Ingrese el año completo : ")  
                 while decada.isnumeric() == False:
@@ -164,14 +167,12 @@ def app():
                 else:
                     lista_retorno = filtrar_decada(lista_retorno,"anio",decada)
                 
-                print(generara_separador("-", 80 ,False))
                 for i in lista_retorno:
                     cont += 1
                     print(str(i["id"]) + " - " + i["nombre"] + " - " + i["plataforma"] + " - " + i["empresa"] + " - " + i["anio"] + " - " + i["pais"] + " - " + str(i["genero"]) + "\n")
                 print("La cantidad de juegos en la decada ingresada es de", cont)
-                print(generara_separador("-", 80 ,False))
 
-            case "3":
+            case "3": #DONE
                 tipo = input("Queres ordenarlos de manera ascendente o descentedente [ASC - DESC]: ")
                 tipo = tipo.upper()
                 while re.match("[ASC|DESC]", tipo) == None:
@@ -188,18 +189,18 @@ def app():
                     print(str(i["id"]) + " - " + i["nombre"] + " - " + i["plataforma"] + " - " + i["empresa"] + " - " + i["anio"] + " - " + i["pais"] + " - " + str(i["genero"]) + "\n")
                 print(generara_separador("-", 90 ,False))
                 
-            case "4":
+            case "4": # Me guarda literlamente la clave genero filtrar_llave(lista_retorno,"genero","Pelea\.","no_esta")
                 lista_retorno = filtrar_llave(lista_copia,"modo",".+multijugador$|.+cooperativo$","esta")
                 for i in lista_retorno:
                     print(str(i["id"]) + " - " + i["nombre"] + " - " + i["plataforma"] + " - " + i["empresa"] + " - " + i["anio"] + " - " + i["pais"] + " - " + str(i["genero"]) + "\n")
                 
             case "5":
                 if flag == False:
-                    lista_retorno = guardar_en_csv(lista_copia)
+                    guardar_en_csv(lista_copia)
                     flag = True
                 else:
                     lista_retorno = guardar_en_csv(lista_retorno)
-
+                    print(lista_retorno)
 
             case "6":
                 break
