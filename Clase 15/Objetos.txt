@@ -1,0 +1,159 @@
+- POO - 
+
+La programacion orientada a objetos es un metodo para estructurar un progrma mediante la agrupacion de propiedades 
+y comprotamientos relacionados en objetos individuales
+
+Propiedades = Variables
+Metodo = Funciones
+
+clase persona
+    objeto alejo falcone
+        propiedades:
+            nombre
+            apellido
+            edad
+        metodos:
+            comer
+            repirar
+            jugar al lol
+
+
+-- Como definiar una clase --
+class nombre:
+    atributos...
+    metodos ...
+
+class palabra reservada para definira una clase
+nombre: Nombre en PascalCase
+
+
+Las propiedades/atributos que todos los objetos del tipo personaje deben tener de define en un metodo 
+__init__ o constructor
+
+El __ini__ son los valores con los que van a iniciar nuestro objetos y podemos crear muhcos objetos 
+con los mismos atributos y propiedades pero con diferentes datos
+
+cuando se instacia un objeto de una clasee determinada deja de ser una clase generica
+ y pasa a ser un objeto especifico
+
+    --ATRIBUTOS--
+
+class Personaje:
+
+    tipo = "Personaje"
+    def __init__(self,id,nombre,apellido,edad)-> None: # aca vamos a pasarle como parametro 
+    los datos que queremos que tenga el objeto
+
+    self.id = id 
+    self.nombre = nombre
+    self.apellido = apellido
+    self.edad = edad
+
+No va a retornar nada pq solo se encarga de darle los atributos y metodos a los objetos
+
+INSTANCIA = Momento en el cual se construye un objeto con una clase 
+Crear una INSTANCIA es crear una variable y en esa variable voy a tener un objeto
+
+personaje_A = Personaje(0, "Alejo", "Falcone", 22)
+personaje_B = Personaje(1,"Delfina","Falcone", 21)
+
+print(personaje_A.nombre) # Alejo
+print(personaje_B.nombre) # Delfina
+
+    -- METODOS -- 
+
+Todos los metodos que creemos dentro de una clase toman como parametro self
+
+class Personaje:
+
+    tipo = "Personaje"
+    def __init__(self,id,nombre,apellido,edad)-> None: # aca vamos a pasarle como parametro 
+    los datos que queremos que tenga el objeto
+
+    self.id = id 
+    self.nombre = nombre
+    self.apellido = apellido
+    self.edad = edad
+
+    def descripcion(self) -> str:
+        return "{0}-{1}".format(self.nombre,self.apellido)
+
+print(personaje_A.descripcion()) # Alejo - Falcone
+print(personaje_B.descripcion()) # Delfina - Falcone
+
+-- EJEMPLO --
+
+clas persona
+
+    # ATRIBUTO DE CLASE O ESTATICO
+    tipo = "humano"
+
+    #CONSTRUCTOR (donde se definen e inicializan los atributos no estaticos o de instancia)
+    def __init__(self,nombre,apellido,edad,genero = ""): # genero seria opcional
+    self.nombre = nombre
+    self.apellido = apellido 
+    self.edad = edad
+    self.genero = genero
+
+    #METODOS DE INSTANCIA (es un metodo de instancia pq va a estar relacionado con un opbjeto que acabamos de crear )
+    def presentarse(self):
+        print(f"Hola Mi nombre es {self.nombre} {self.apellido}, tengo {self.edad} años y soy {self.tipo}" )
+
+
+
+@property es un interceptor y va a intervenir en un dato para que lo podamos leer 
+es una propiedad
+
+ --GETTERS--
+
+@property si no usamos el property nos va a devolver una ubicacion en la memoria 
+ def password(self):
+    return self_password
+
+
+--SETTERS-- 
+
+@__password.setter 
+def password(self,new_password):
+    self.__password = new_password
+print()
+
+def cambiar_password(self, old_passwrod,new_password):
+    if old_passwrod == self.__password:
+        self.__password = new_password
+    else:
+    print("La pass es incorrecta)
+        
+@property va con el objeto y cuando seteo lo que se arroba es 
+
+--  METODOS DUNDER -- 
+
+--SOBRECARGA--
+
+Es un metodo reprogramado 
+Darle una funcionabilida diferente a algo que ya existe
+Sobre escribir metodos que ya tenemos 
+
+__str__
+Se crea una representacion del objeta que tenga significado para las personas 
+
+def __str__(self)->str:
+    return "{0}-{1}".format(self.nombre,self.apellido) #Cuando imprimo el objeto directamente nos va a printerar lo que digamos aca
+
+print(personaje_A)
+
+--SOBRECARGA DE OPERADORES DE COMPARACION--
+
+__lt__ <
+__le__ <=
+__eq__ ==
+
+def __str__(self)->str:
+    retun "{0} - {1} - {2}".format(self.apellido,self.nombre,self.edad)
+
+print(objeto)
+
+def __lt__(self,item): #esto tiene que retornar un bool
+    return self.edad < item.edad
+
+print( usuario1 < usuario2 )

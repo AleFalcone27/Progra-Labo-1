@@ -79,22 +79,33 @@ lambda a, b : a + b
 			print(indice,elemnto)
 	-.zip()
 		-Permite iterar varias listas a la vez
-	-.map()
-		- Pasa como parametros a una funcion a cada uno de los elementos de una lista, dando como resultado			una nueva lista formada por los elementos que dicah funcion retorna
+
+	-.map(funcion,lista)
+		Map recibe una (funcion y una lista)
+			- Crea una nueva lista y recorre la lista que le pasamos 
+			- Por cada elemento le aplica la funcion que nosotros le pasamos y los agrega a la nueva lista
+
+		- Pasa como parametros a una funcion a cada uno de los elementos de una lista, dando 		como resultadouna nueva lista formada por los elementos que dicah funcion retorna
+		- Afecta la lista en la que estamos trabajando.
 			lista = ["Marty","Emmett","Biff"]
 			lista_resultado = list(map(str.upper,lista) # Como devuelve un objeto map lo casteamos a list	
 			print(lista_resultado)
 			#["MARTY", "EMMETT", "BIFF"]
-		
-	-.filter()
+	
+	-.filter(funcion,lista)
+
+		- Recorre los elementos de la lista, le aplica el criterio de la condicion (devulve true o false) si cumple la condicion lo apendea a una lista y sino no. 
+
 		-Filtra una lista de elementos para los que una funcion devuelve True y los devuelves
 		lista = [17,17,18]
 		lista_resultado = lista(filter(lambda elem : elem >= 18, lista))
 		print(lista_resultado)
 		# [71,18]
 
-	-.reduce()
-		- La funcion reduce se utiliza principalmente para llevar a cabo un calculo acumulativo sobre una lista de valores y devolver el resultado, esta incluida en el modulo functools.
+	-.reduce(funcion,lista)
+		- Recorre los elementos de la lista 
+		
+		- La funcion reduce se utiliza principalmente para llevar a cabo un calculo acumulativo sobre una lista de valores y devolver el resultado, esta incluida en el modulo 				functools.
 		from functiools import reduce
 		lista = [17,71,18]
 		suma = reduce(lambda x, y : x + y,lista)

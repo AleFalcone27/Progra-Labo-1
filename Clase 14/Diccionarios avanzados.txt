@@ -23,7 +23,6 @@
 		# {'name': ['MARTY', 'Mcfly'], 'edad': 18}
 
 
-		
 	-Copiado profundo-
 		Deep copy,  si el objeto contiene subobjetos estos se copian recursivamente.
 
